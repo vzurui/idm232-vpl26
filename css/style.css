@@ -59,14 +59,16 @@ body {
 h1 {
 	color: var(--nightlife);
 	font-family: var(--font-title);
-	font-size: 3vw;
-	text-align: center;
+	font-size: 4.3vw;
+	margin: 0.5em 0 0 1.1em;
 }
 
 h2 {
-	font-family: var(--font-text);
-	font-size: 200%;
+	font-family: var(--font-light);
+	font-size: 300%;
 	color: var(--flamingo-);
+	letter-spacing: 1px;
+	text-align: center;
 }
 
 p {
@@ -74,4 +76,53 @@ p {
 	font-size: 1vw;
 	color: var(--nightlife);
 	word-spacing: 2px;
+	line-height: 25px;
+	margin: 4em 15em;
+	max-width: 120ch;
+}
+
+nav {
+	font-family: var(--font-text);
+	font-size: 200%;
+	text-align: center;
+	justify-content: center;
+	margin: 2.5em 0 0 0;
+}
+
+a {
+	margin-right: 2em;
+}
+
+.nav-bar {
+	display: grid;
+	grid-template-columns: 15% 75%;
+	margin: 0 0 4em 0;
+}
+
+.bold {
+	font-family: var(--font-bold);
+	font-weight: 900;
+}
+
+.fade {
+	animation: fade ease 4s infinite;
+}
+
+@keyframes fade {
+	0% {
+			color: var(--flamingo-)
+	}
+	25% {
+		color: var(--orchid-);	
+	}
+	50% {
+		color: var(--flamingo-)
+	}
+	75%
+	{
+		color: var(--orchid-);
+	}
+	100% {
+		color: var(--flamingo-);	
+	}
 }
