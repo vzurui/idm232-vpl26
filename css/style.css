@@ -73,12 +73,12 @@ h2 {
 
 p {
 	font-family: var(--font-text);
-	font-size: 1vw;
+	font-size: 1.1vw;
 	color: var(--nightlife);
 	word-spacing: 2px;
 	line-height: 25px;
 	margin: 4em 15em;
-	max-width: 120ch;
+	max-width: 115ch;
 }
 
 nav {
