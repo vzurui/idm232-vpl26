@@ -65,7 +65,7 @@ h1 {
 
 h2 {
 	font-family: var(--font-light);
-	font-size: 300%;
+	font-size: 380%;
 	color: var(--flamingo-);
 	letter-spacing: 1px;
 	text-align: center;
@@ -91,12 +91,28 @@ nav {
 
 a {
 	margin-right: 2em;
+	text-decoration: none;
+	color: var(--nightlife);
+}
+
+a:hover {
+	color: var(--orchid-)
+}
+
+a:visited {
+	color: var(--nightlife)
 }
 
 .nav-bar {
 	display: grid;
 	grid-template-columns: 15% 75%;
-	margin: 0 0 4em 0;
+	margin: -2.75em 0 1em 0;
+}
+
+hr.solid {
+	border-top: 2px solid var(--nightlife);
+	border-radius: 4px;
+	margin: 2.5em 25em 2em 25em;
 }
 
 .bold {
@@ -104,7 +120,28 @@ a {
 	font-weight: 900;
 }
 
-.fade {
+.topnav .search-container {
+  display: flex;
+  justify-content: center;
+	margin-bottom: 2em;
+}
+
+.topnav input[type=text] {
+  padding: 15px 18em;
+  margin-top: 1em;
+  font-size: 17px;
+	text-align: center;
+  border-radius: 15px;
+}
+
+.placeholder-image {
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+	height: auto;
+}
+
+/* .fade {
 	animation: fade ease 4s infinite;
 }
 
@@ -113,16 +150,26 @@ a {
 			color: var(--flamingo-)
 	}
 	25% {
-		color: var(--orchid-);	
+		color: var(--mustard-);	
 	}
 	50% {
 		color: var(--flamingo-)
 	}
 	75%
 	{
-		color: var(--orchid-);
+		color: var(--mustard-)
 	}
 	100% {
 		color: var(--flamingo-);	
 	}
 }
+
+#fade-1 {
+	opacity: 50%;
+	line-height: 1;
+}
+
+#fade-2 {
+	opacity: 30%;
+	line-height: 1;
+} */
