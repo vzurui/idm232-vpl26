@@ -7,26 +7,27 @@
         <link rel="stylesheet" href="css/style.css">
       </head>
 <body>
-	<div class="nav-bar">
-		<a href="index.html"><h1>Nibbly</h1></a>
-	
-		<nav>
-			<a>Home</a>
-			<a>About</a>
-			<a>Categories</a>
-			<a>All Recipes</a>
-		</nav>
-	</div>
-
-<hr class="solid">
-<div class="topnav">
-  <div class="search-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Search Here!" name="search">
-    </form>
+  <header class="header">
+    <a href="index.html" class="logo"><h1>Nibbly</h1></a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+      <li><a href="about.html">About</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="all-recipes.html">All Recipes</a></li>
+    </ul>
+  </header>
+  
+  <div class="topnav">
+    <div class="search-container">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Search Here!" name="search">
+      </form>
+    </div>
   </div>
-</div>
-	
+  
+  <hr class="solid">
+    
 	<h2>Single Recipe</h2>
 </body>
 </html>

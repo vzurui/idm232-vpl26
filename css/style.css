@@ -53,14 +53,14 @@
 
 body {
 	background-color: #FBFDEC;
-	margin: 2.5em;
+	margin: 1em;
 }
 
 h1 {
 	color: var(--nightlife);
 	font-family: var(--font-title);
-	font-size: 4.3vw;
-	margin: 0.5em 0 0 1.1em;
+	font-size: 4.5vw;
+	margin: -0.25em 0 0 0.5em;
 }
 
 h2 {
@@ -69,6 +69,7 @@ h2 {
 	color: var(--flamingo-);
 	letter-spacing: 1px;
 	text-align: center;
+	margin: 1em 0 1em 0;
 }
 
 p {
@@ -90,7 +91,7 @@ nav {
 }
 
 a {
-	margin-right: 2em;
+	margin-right: 1em;
 	text-decoration: none;
 	color: var(--nightlife);
 }
@@ -112,7 +113,7 @@ a:visited {
 hr.solid {
 	border-top: 2px solid var(--nightlife);
 	border-radius: 4px;
-	margin: 2.5em 25em 2em 25em;
+	margin: 5em 25em 5em 20em;
 }
 
 .bold {
@@ -123,15 +124,15 @@ hr.solid {
 .topnav .search-container {
   display: flex;
   justify-content: center;
-	margin-bottom: 2em;
+	margin: 2em 0;
 }
 
 .topnav input[type=text] {
-  padding: 15px 18em;
+  padding: 15px 14em;
   margin-top: 1em;
   font-size: 17px;
 	text-align: center;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .placeholder-image {
@@ -141,35 +142,173 @@ hr.solid {
 	height: auto;
 }
 
-/* .fade {
-	animation: fade ease 4s infinite;
+.recipe-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	align-items: center;
+	gap: 30px 20px;
+	margin: 2em;
 }
 
-@keyframes fade {
-	0% {
-			color: var(--flamingo-)
-	}
-	25% {
-		color: var(--mustard-);	
-	}
-	50% {
-		color: var(--flamingo-)
-	}
-	75%
-	{
-		color: var(--mustard-)
-	}
-	100% {
-		color: var(--flamingo-);	
-	}
+
+.recipe-grid img { /* make this responsive */
+	width: 100%;
+	height: auto;
+	animation: fadeInAnimation ease 2s 1;
+	animation-fill-mode: forwards;
 }
 
-#fade-1 {
-	opacity: 50%;
-	line-height: 1;
+@keyframes fadeInAnimation {
+0% {
+	opacity: 0;
+}
+100% {
+	opacity: 1;
+}
 }
 
-#fade-2 {
-	opacity: 30%;
-	line-height: 1;
+.recipe:hover img { 
+filter: opacity(50%);
+transform: scale(1.02);
+border: 2px solid var(--flamingo-);
+}
+
+
+/* responsive nav menu */
+/* 
+body {
+  margin: 0;
+  font-family: 'funtonalie', Helvetica, sans-serif;
+	color: var(--nightlife);
+  background-color: var(--pearl-powder);
 } */
+
+a {
+	font-family: 'fustat', Arial, Helvetica, sans-serif;
+  color: var(--nightlife);
+	font-size: 3.5vh;
+}
+
+/* header */
+
+.header {
+  width: 100%;
+  z-index: 3;
+	margin: 4em 1.5em;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  /* background-color: #fff; */
+}
+
+.header li a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 28px 50px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+
