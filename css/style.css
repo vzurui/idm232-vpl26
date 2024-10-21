@@ -171,8 +171,7 @@ hr.solid {
 	margin: 2em;
 }
 
-
-.recipe-grid img { /* make this responsive */
+.recipe-grid img { 
 	width: 100%;
 	height: auto;
 	animation: fadeInAnimation ease 2s 1;
@@ -200,6 +199,9 @@ a {
 	font-size: 3.5vh;
 }
 
+
+/*hamburger menu*/
+
 /* header */
 
 .header {
@@ -216,7 +218,6 @@ a {
   padding: 0;
   list-style: none;
   overflow: hidden;
-  /* background-color: #fff; */
 }
 
 .header li a { 
@@ -308,31 +309,13 @@ a {
   top: 0;
 }
 
-/* 48em = 768px */
+/*end of hamburger*/
 
-@media screen
-and (min-width: 1024px) {
-	h1 {
-		margin-right: 40px;
-	}
-  .header li {
-    float: left;
-  }
-  /* .header li a {
-    padding: 30px 20px;
-  } */
-  .header .menu {
-    clear: none;
-    float: right;
-    max-height: none;
-  }
-  .header .menu-icon {
-    display: none;
-  }
 
-}
 
-/* media query 1000, 1024 tablet */
+/* media queries */
+
+/* tablet queries (1000, 1024) */
 
 @media screen
 and (max-width: 1000px) {
@@ -347,109 +330,26 @@ and (max-width: 1000px) {
 		display: none;
 	}
 }
-/*
+
 @media screen
-and (max-width: 1024px) {
-	.header {
-		background-color: var(--eclipse);
-		position: fixed;
-		width: 100%;
-		z-index: 3;
-		margin: -4em -1.5em;
-		padding-top: 20px;
-	}
-	.header li a { 
-		display: none;
-		padding: 25px 50px 20px 0;
-		text-decoration: none;
-	}
-	.topnav .search-container {
-		display: none;
-	}
+and (min-width: 1024px) {
 	h1 {
-		color: var(--orchid-);
-		font-family: var(--font-title);
-		font-size: 5vw;
-		margin: -0.4em 0 0 .2em;
-		position: relative;
+		margin-right: 40px;
 	}
-	/* menu 
-
-.header .menu {
-  clear: both;
-  max-height: 0;
-  transition: max-height .2s ease-out;
+  .header li {
+    float: left;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
 }
 
 
- menu icon 
-
-.header .menu-icon {
-  cursor: pointer;
-  display: flex;
-  padding: 20px;
-	justify-content: right;
-  position: relative;
-  user-select: none;
-}
-
-.header .menu-icon .navicon {
-  background: var(--orchid-);
-  display: block;
-  height: 2px;
-  position: right;
-  transition: background .2s ease-out;
-  width: 18px;
-}
-
-.header .menu-icon .navicon:before,
-.header .menu-icon .navicon:after {
-  background: var(--orchid-);
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all .2s ease-out;
-  width: 100%;
-}
-
-.header .menu-icon .navicon:before {
-  top: 5px;
-}
-
-.header .menu-icon .navicon:after {
-  top: -5px;
-}
-
- menu btn 
-
-.header .menu-btn {
-  display: none;
-}
-
-.header .menu-btn:checked ~ .menu {
-  max-height: 240px;
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent;
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  top: 0;
-}
-
-}
-*/
 /* mobile queries (320, 425) */
 
 @media screen
