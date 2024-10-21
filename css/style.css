@@ -226,6 +226,11 @@ a {
   text-decoration: none;
 }
 
+.header li a:hover,
+.header .menu-btn:hover {
+	transform: scale(101%);
+}
+
 .header .logo {
   display: block;
   float: left;
@@ -347,6 +352,7 @@ and (min-width: 1024px) {
   .header .menu-icon {
     display: none;
   }
+	
 }
 
 
