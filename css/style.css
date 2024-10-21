@@ -219,18 +219,19 @@ a {
   /* background-color: #fff; */
 }
 
-.header li a { /* causing margin space */
+.header li a { 
   display: block;
-  padding: 25px 50px 20px 0;
+  padding: 25px 50px 20px 35px;
   text-decoration: none;
 }
 
 .header .logo {
   display: block;
   float: left;
-  font-size: 2em;
+  font-size: 2vw;
   padding: 10px 20px;
   text-decoration: none;
+	position: relative;
 }
 
 /* menu */
@@ -245,14 +246,15 @@ a {
 
 .header .menu-icon {
   cursor: pointer;
-  display: inline-block;
-  padding: 28px 50px;
+  display: flex;
+	justify-content: right;
+  padding: 20px;
   position: relative;
   user-select: none;
 }
 
 .header .menu-icon .navicon {
-  background: #333;
+  background: var(--orchid-);
   display: block;
   height: 2px;
   position: relative;
@@ -262,7 +264,7 @@ a {
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-  background: #333;
+  background: var(--orchid-);
   content: '';
   display: block;
   height: 100%;
@@ -308,7 +310,8 @@ a {
 
 /* 48em = 768px */
 
-@media (min-width: 48em) {
+@media screen
+and (min-width: 1024px) {
 	h1 {
 		margin-right: 40px;
 	}
@@ -326,20 +329,10 @@ a {
   .header .menu-icon {
     display: none;
   }
+
 }
 
 /* media query 1000, 1024 tablet */
-
-@media screen
-and (max-width: 1000px) {
-	.recipe-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		align-items: center;
-		gap: 30px 20px;
-		margin: 2em;
-	}
-}
 
 @media screen
 and (max-width: 1000px) {
