@@ -57,7 +57,7 @@ body {
 }
 
 h1 {
-	color: var(--nightlife);
+	color: var(--orchid-);
 	font-family: var(--font-title);
 	font-size: 4.5vw;
 	margin: -0.25em 0 0 0.5em;
@@ -93,7 +93,7 @@ nav {
 a {
 	/* margin-right: 1em; */
 	text-decoration: none;
-	color: var(--nightlife);
+	color: var(--flamingo-);
 }
 
 a:hover {
@@ -108,7 +108,7 @@ footer {
 	display: flex;
 	flex-direction: column;
 	color: var(--flamingo-);
-	background-color: var(--eclipse);
+	background-color: var(--nightlife);
 	font-family: var(--font-title), Arial, Helvetica, sans-serif;
 	padding: 2px;
 	text-align: center;
@@ -141,15 +141,16 @@ hr.solid {
 .topnav .search-container {
   display: flex;
   justify-content: center;
-	margin: 2em 0;
+	margin: 0;
 }
 
 .topnav input[type=text] {
-  padding: 15px 10em;
-  margin-top: 1em;
-  font-size: 17px;
+  padding: 10px 8em;
+  margin-top: 1.2em;
+  font-size: 14px;
 	text-align: center;
   border-radius: 10px;
+	border: 3px solid var(--nightlife)
 }
 
 .placeholder-image {
@@ -202,16 +203,19 @@ body {
 
 a {
 	font-family: 'fustat', Arial, Helvetica, sans-serif;
-  color: var(--nightlife);
+  color: var(--flamingo-);
 	font-size: 3.5vh;
 }
 
 /* header */
 
 .header {
+	background-color: var(--eclipse);
+	position: fixed;
   width: 100%;
   z-index: 3;
-	margin: 4em 1.5em;
+	margin: -5em -1.5em;
+	padding-top: 8px;
 }
 
 .header ul {
@@ -224,7 +228,7 @@ a {
 
 .header li a { /* causing margin space */
   display: block;
-  padding: 30px 40px 30px 0;
+  padding: 25px 50px 20px 0;
   text-decoration: none;
 }
 
