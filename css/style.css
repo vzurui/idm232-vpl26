@@ -124,6 +124,35 @@ footer p {
 	font-size: 2vh;
 }
 
+/* .no-results {
+	color: var(--nightlife);
+	font-size: 200%;
+	padding: 9em 5rem;
+	margin: 2em;
+	text-align: center;
+} */
+
+.nothing-found {
+	display: flex;
+	flex-direction: column;
+	padding: 14em 5em 14em 5em;
+	margin: 4em;
+}
+
+.sad-glass {
+	width: 5vw;
+	height: 9vh;
+	padding: 5px;
+	align-self: center;
+	justify-self: center;
+}
+
+.no-results {
+	text-align: center;
+	font-size: 180%;
+	margin: 0;
+}
+
 .nav-bar {
 	display: grid;
 	grid-template-columns: 15% 75%;
