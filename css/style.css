@@ -114,6 +114,8 @@ nav {
 a {
 	text-decoration: none;
 	color: var(--flamingo-);
+	font-family: 'fustat', Arial, Helvetica, sans-serif;
+	font-size: 110%;
 }
 
 a:hover {
@@ -221,10 +223,14 @@ hr.solid {
 
 /*search bar*/
 
-.topnav .search-container {
-  display: flex;
-  justify-content: center;
-	margin: 0;
+.menu {
+	width: 75%;
+	display: flex;
+	flex-direction: row;
+}
+
+form {
+	width: 30%;
 }
 
 .topnav input[type=text] {
@@ -287,12 +293,6 @@ transform: scale(1.02);
 border: 2px solid var(--flamingo-);
 }
 
-a {
-	font-family: 'fustat', Arial, Helvetica, sans-serif;
-  color: var(--flamingo-);
-	font-size: 3.5vh;
-}
-
 .recipe-div {
 	display: grid;
 	grid-template-columns: 1fr 50%;
@@ -350,7 +350,7 @@ a {
 
 .header li a { 
   display: block;
-  padding: 25px 50px 20px 35px;
+  padding: 25px 20px 20px 35px;
   text-decoration: none;
 }
 
@@ -373,7 +373,7 @@ a {
 .header .menu {
   clear: both;
   max-height: 0;
-  transition: max-height .2s ease-out;
+  transition: max-height .3s ease-out;
 }
 
 /* menu icon */
@@ -392,7 +392,7 @@ a {
   display: block;
   height: 2px;
   position: relative;
-  transition: background .2s ease-out;
+  transition: background .3s ease-out;
   width: 18px;
 }
 
@@ -403,7 +403,7 @@ a {
   display: block;
   height: 100%;
   position: absolute;
-  transition: all .2s ease-out;
+  transition: all .3s ease-out;
   width: 100%;
 }
 
@@ -492,9 +492,6 @@ and (min-width: 1200px) {
 
 @media screen
 and (max-width: 1200px) {
-	.topnav .search-container {
-		display: none;
-}
 	.categories {
 		display: grid;
 		grid-template-columns: 30% 30%;
@@ -519,6 +516,20 @@ a.recipe-image img {
 .sad-glass {
 	width: 7vw;
 	height: auto;
+}
+.header .menu-btn:checked ~ .menu {
+  max-height: 500px;
+	display: flex;
+	flex-direction: column;
+}
+.topnav input[type=text] {
+  padding: 15px 8em;
+  margin-top: 1.2em;
+	margin-left: 5em;
+  font-size: 14px;
+	text-align: center;
+  border-radius: 10px;
+	border: 3px solid var(--nightlife)
 }
 }
 
@@ -564,6 +575,15 @@ and (max-width: 425px) {
 	.sad-glass {
 		width: 11vw;
 		height: auto;
+	}
+	.topnav input[type=text] {
+		padding: 15px 3.5em;
+		margin-top: 1.2em;
+		margin-left: 5em;
+		font-size: 14px;
+		text-align: center;
+		border-radius: 10px;
+		border: 3px solid var(--nightlife)
 	}
 }
 
