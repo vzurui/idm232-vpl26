@@ -1,20 +1,17 @@
 <?php
-// Include the database connection
-require_once 'db_connection.php';
+// Database connection configuration
+$host = 'localhost';         // Server name
+$dbname = 'CSV_DB 5';   // Database name
+$username = 'root';          // MySQL username (default for MAMP)
+$password = 'root';              // MySQL password (default for MAMP)
 
-// Run your queries
-$sql = "SELECT * FROM recipes";
-$result = $connection->query($sql);
+// Establish connection
+$connection = new mysqli($host, $username, $password, $dbname);
 
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "Recipe Name: " . htmlspecialchars($row['recipe_name']) . "<br>";
-    }
-} else {
-    echo "No recipes found.";
+// Check for connection errors
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
 }
-
-// Close the connection
-$connection->close();
 ?>
+
 

@@ -32,10 +32,12 @@
 
 <h2>Welcome!</h2>
 <p>
-<?php 
-		echo "hello i am trying PHP for the first time!"
-		?>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<?php
+        // Dynamic Content Example
+        echo "<h3>Today's Highlighted Recipe</h3>";
+        echo "<p>Check out our new recipe: <a href='display_recipe.php?id=1'>Ancho-Orange Chicken</a></p>";
+        ?>
+		 <p>
 <img class="placeholder-image" src="images/elementor-placeholder-image.webp" alt="gray-placeholder-image">
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <hr class="solid">
