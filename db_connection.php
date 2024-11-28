@@ -1,17 +1,18 @@
 <?php
-// Database connection configuration
-$host = 'localhost';         // Server name
-$dbname = 'CSV_DB 5';   // Database name
-$username = 'root';          // MySQL username (default for MAMP)
-$password = 'root';              // MySQL password (default for MAMP)
+$host = 'localhost';
+$username = 'root';
+$password = 'root';
+$database = 'idm232_db';
 
-// Establish connection
-$connection = new mysqli($host, $username, $password, $dbname);
+$conn = new mysqli($host, $password, $username, $database);
 
-// Check for connection errors
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+echo "Connected successfully!";
+
+$conn->close();
 ?>
+
 
 
