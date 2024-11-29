@@ -14,7 +14,7 @@
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
             <li><a href="about.html">About</a></li>
-            <li><a href="cuisines.html">Cuisines</a></li>
+            <li><a href="cuisines.php">Cuisines</a></li>
             <li><a href="all-recipes.html">All Recipes</a></li>
         </ul>
     </header>
