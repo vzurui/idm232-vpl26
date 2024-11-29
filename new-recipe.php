@@ -35,7 +35,7 @@ $conn->close(); // Close the database connection
 <body>
 <!-- search bar-->
 <header class="header">
-    <a href="index.html" class="logo"><h1>Nibbly</h1></a>
+<a href="index.html" class="logo"><img src="images/nibbly-logo.png"></a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">

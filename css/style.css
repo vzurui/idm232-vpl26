@@ -491,7 +491,6 @@ border: 2px solid var(--flamingo-);
   width: 100%;
   z-index: 3;
 	margin: -1.5em -1.5em;
-	padding-top: 10px;
 }
 
 .header ul {
@@ -515,8 +514,8 @@ border: 2px solid var(--flamingo-);
 .header .logo {
   display: block;
   float: left;
-  font-size: 140%;
-  padding: 10px 20px;
+	padding-top: 15px;
+	margin-top: -0.5em;
   text-decoration: none;
 	position: relative;
 }
