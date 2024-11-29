@@ -176,7 +176,28 @@ button:hover {
 /* home page */
 
 #intro {
+	font-size: 430%;
+	color: var(--flamingo-);
+	margin: 0 1em;
+	text-align: center;
+	animation: fadeIn 1.5s ease-in forwards;
+	margin-top: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#home-bio {
+	font-size: 185%;
+	text-align: center;
 	color: var(--nightlife);
+	margin-top: 0.5em;
 }
 
 /* cuisine */
@@ -459,6 +480,10 @@ border: 2px solid var(--flamingo-);
 /*hamburger menu*/
 
 /* header */
+
+.search-bar {
+	position: sticky;
+}
 
 .header {
 	background-color: var(--eclipse);
