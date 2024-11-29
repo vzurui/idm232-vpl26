@@ -36,7 +36,7 @@
                 $placeholderImage = "images/elementor-placeholder-image.webp"; // Placeholder for images
 
                 // Dynamically generate each recipe card
-                echo "<a class='recipe-card' href='recipe.php?id=$id'>";
+                echo "<a class='recipe-card' href='new-recipe.php?id=$id'>";
                 echo "<img src='$placeholderImage' alt='Image of $name'>";
                 echo "<div class='recipe-info'>";
                 echo "<h3>$name</h3>";

@@ -173,6 +173,23 @@ button:hover {
 	font-size: 180%;
 }
 
+/* cuisine */
+
+.cuisine-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	align-items: center;
+	gap: 50px 20px;
+	margin: 2em;
+}
+
+.cuisine img {
+	height: auto;
+	width: 100%;
+}
+
+
+
 
 /*no search*/
 
