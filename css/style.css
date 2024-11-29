@@ -186,9 +186,20 @@ button:hover {
 .cuisine img {
 	height: auto;
 	width: 100%;
+	margin-bottom: 20px;
 }
 
+.cuisine:hover img {
+	height: auto;
+	width: 100%;
+	border: 2px solid var(--flamingo-);
+}
 
+a.cuisine {
+	color: var(--nightlife);
+	font-size: 170%;
+	text-align: center;
+}
 
 
 /*no search*/
