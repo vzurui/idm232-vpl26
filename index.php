@@ -9,26 +9,27 @@
       </head>
 <body>
 
-  <header class="header">
+<!-- search bar-->
+<header class="header">
     <a href="index.html" class="logo"><h1>Nibbly</h1></a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
-		
         
-    <div class="topnav">
+  <li><a href="about.html">About</a></li>
+  <li><a href="cuisines.php">Cuisines</a></li>
+  <li><a href="all-recipes.php">All Recipes</a></li>
+</ul>
+  </header>
+
+  <div class="topnav">
     <div class="search-container">
       <form action="/action_page.php">
         <input type="text" placeholder="Search Here!" name="search">
       </form>
     </div>
   </div>
-
-  <li><a href="about.html">About</a></li>
-  <li><a href="cuisines.php">Cuisines</a></li>
-  <li><a href="all-recipes.php">All Recipes</a></li>
-</ul>
-  </header>
+<!--search bar end-->
 
 <h2>Welcome!</h2>
 <p>

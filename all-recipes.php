@@ -8,16 +8,27 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="header">
-        <a href="index.html" class="logo"><h1>Nibbly</h1></a>
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-        <ul class="menu">
-            <li><a href="about.html">About</a></li>
-            <li><a href="cuisines.php">Cuisines</a></li>
-            <li><a href="all-recipes.html">All Recipes</a></li>
-        </ul>
-    </header>
+<!-- search bar-->
+<header class="header">
+    <a href="index.html" class="logo"><h1>Nibbly</h1></a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+        
+  <li><a href="about.html">About</a></li>
+  <li><a href="cuisines.php">Cuisines</a></li>
+  <li><a href="all-recipes.php">All Recipes</a></li>
+</ul>
+  </header>
+
+  <div class="topnav">
+    <div class="search-container">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Search Here!" name="search">
+      </form>
+    </div>
+  </div>
+<!--search bar end-->
 
     <h2>All Recipes</h2>
     <div class="recipe-grid">
@@ -53,7 +64,6 @@
     </div>
 
     <footer>
-        <p><a href="no-search.html">No Search</a></p>
         <p><a href="search-found.html">Search</a></p>
     </footer>
 </body>
