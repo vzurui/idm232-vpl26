@@ -53,7 +53,8 @@
 
 body {
 	background-color: var(--pearl-powder);
-	margin: 1.5em;
+	margin: 0;
+	padding-top: 150px;
 }
 
 h1 {
@@ -420,20 +421,31 @@ form {
 
 .search-container {
 	display: flex;
-	justify-content: center;
-	border-bottom: 3px solid var(--eclipse);
-	padding: 20px 100px;
-	margin: 0 -1.5em;
-
+	justify-content: center; /* Center the search bar */
 }
 
-.topnav input[type=text] {
-  padding: 10px 10em;
-  margin-top: 5em;
-  font-size: 14px;
-	text-align: center;
-  border-radius: 10px;
-	border: 3px solid var(--nightlife)
+/* Search Bar Styles */
+.topnav {
+	padding: 15px 0; /* Add spacing for the search bar */
+	background-color: var(--pearl-powder); /* Light background for the search bar */
+	border-bottom: 3px solid var(--nightlife); /* Optional: Border between header and search bar */
+}
+
+.fixed-container {
+	position: fixed; /* Stick the container to the top */
+	top: 0;          /* Align to the very top of the viewport */
+	width: 100%;     /* Make it span the full width of the page */
+	z-index: 100;   /* Ensure it appears above other elements */
+}
+
+
+.topnav input[type="text"] {
+	padding: 10px;
+	font-size: 14px;
+	border-radius: 8px;
+	border: 2px solid var(--nightlife); /* Border color for search box */
+	width: 70%; /* Adjust width as needed */
+	max-width: 600px; /* Prevent it from becoming too wide */
 }
 
 /*search bar*/
@@ -533,7 +545,12 @@ height: auto;
 }
 
 .recipe-header {
-	margin: 1.2em 0 0 0;
+	margin: 1.2em 0 -1em 0;
+}
+
+.showcase-image {
+width: 70%;
+height: auto;
 }
 
 /*hamburger menu*/
@@ -541,30 +558,36 @@ height: auto;
 /* header */
 
 .search-bar {
-	position: sticky;
+	background-color: var(--eclipse); /* Background color for the header */
 }
 
 .header {
 	display: flex;
-	justify-content: space-between;
-	background-color: var(--eclipse);
-	position: fixed;
-  width: 100%;
-  z-index: 3;
-	margin: -1.5em -1.5em;
+	align-items: center;
+	padding: 10px 20px 5px 20px; /* Add padding for spacing */
+	margin: 0;
 }
 
 .header ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  overflow: hidden;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	justify-content: left;
+	gap: 20px; /* Space between menu items */
 }
 
-.header li a { 
-  display: block;
-  padding: 25px 20px 20px 35px;
-  text-decoration: none;
+
+.header li a {
+	text-decoration: none;
+	color: var(--flamingo-);
+	font-family: var(--font-text);
+	font-size: 110%;
+}
+
+.header li a:hover {
+	color: var(--orchid-);
+	transform: scale(1.1);
 }
 
 .header li a:hover,
@@ -575,12 +598,13 @@ height: auto;
 .header .logo {
   float: left;
 	padding-top: 15px;
-	margin-top: -0.5em;
+	margin-top: -1em;
   text-decoration: none;
 	position: relative;
 }
 
 .logo img {
+	margin-top: 1em;
 	width: 87%;
 	height: auto;
 }
@@ -588,9 +612,18 @@ height: auto;
 /* menu */
 
 .header .menu {
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+	padding: 0 20px;
+	margin: 0;
   clear: both;
   max-height: 0;
   transition: max-height .3s ease-out;
+}
+
+.menu li {
+ margin: 0 16px;
 }
 
 /* menu icon */

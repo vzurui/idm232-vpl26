@@ -10,8 +10,10 @@
 <body>
 
 <!-- search bar-->
-<header class="header">
-<a href="index.html" class="logo"><img src="images/nibbly-logo.png"></a>
+<div class="fixed-container">
+<div class="search-bar">
+  <header class="header">
+    <a href="index.html" class="logo"><img src="images/nibbly-logo.png"></a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
@@ -29,6 +31,8 @@
       </form>
     </div>
   </div>
+</div>
+</div>
 <!--search bar end-->
 
 <h2>Welcome!</h2>
