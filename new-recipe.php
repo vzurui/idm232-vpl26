@@ -55,11 +55,21 @@ $conn->close(); // Close the database connection
   </div>
 <!--search bar end-->
 
-    <h2><?php echo htmlspecialchars($recipe['recipe_name'] ?? 'Single Recipe'); ?></h2>
+    <h2 class="recipe-header"><?php echo htmlspecialchars($recipe['recipe_name'] ?? 'Single Recipe'); ?></h2>
+    <hr class="solid">
     <div class="recipe-div">
         <!-- Recipe Image -->
         <div class="ingredients-div">
+            <div class="ingredients-image">
             <img src="images/elementor-placeholder-image.webp" alt="<?php echo htmlspecialchars($recipe['recipe_name'] ?? 'Recipe Image'); ?>">
+            </div>
+            <!-- Recipe Description -->
+        <div class="blurb-div">
+            <h3>Description</h3>
+            <p><?php echo htmlspecialchars($recipe['description'] ?? 'No description provided.'); ?></p>
+        </div>
+
+            
             <div>
                 <h3>Ingredients</h3>
                 <ul>
@@ -75,12 +85,6 @@ $conn->close(); // Close the database connection
                     ?>
                 </ul>
             </div>
-        </div>
-
-        <!-- Recipe Description -->
-        <div class="blurb-div">
-            <h3>Description</h3>
-            <p><?php echo htmlspecialchars($recipe['description'] ?? 'No description provided.'); ?></p>
         </div>
 
         <!-- Recipe Steps -->
@@ -101,7 +105,6 @@ $conn->close(); // Close the database connection
         </div>
     </div>
 
-    <hr class="solid">
 
     <footer>
         <p><a href="all-recipes.php">Back to All Recipes</a></p>

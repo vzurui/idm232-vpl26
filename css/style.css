@@ -230,6 +230,7 @@ button:hover {
 	text-align: center;
 	margin-top: 1em;
 	font-weight: 900;
+	font-size: 150%;
 }
 
 .cuisine-container {
@@ -308,7 +309,6 @@ button:hover {
 	color: var(--nightlife);
 }
 
-
 .cuisine-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -369,9 +369,9 @@ a.cuisine {
 }
 
 hr.solid {
-	border-top: 2px solid var(--nightlife);
+	border-top: 2px solid var(--orchid-);
 	border-radius: 4px;
-	margin: 5em 25em 5em 20em;
+	margin: 2em 25em 1em 20em;
 }
 
 .bold {
@@ -471,11 +471,13 @@ transform: scale(1.02);
 border: 2px solid var(--flamingo-);
 }
 
+
 .recipe-div {
-	display: grid;
-	grid-template-columns: 1fr 50%;
-	column-gap: 30px;
-	margin: 5em 2em -15em 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 3em 3em;
 }
 
 .blurb-div p {
@@ -484,6 +486,13 @@ border: 2px solid var(--flamingo-);
 
 .ingredients-div {
 	align-items: center;
+}
+
+.ingredients-image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 4em;
 }
 
 .about {
@@ -506,6 +515,9 @@ width: 15%;
 height: auto;
 }
 
+.recipe-header {
+	margin: 1.2em 0 0 0;
+}
 
 /*hamburger menu*/
 
