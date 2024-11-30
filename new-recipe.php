@@ -60,9 +60,15 @@ $conn->close(); // Close the database connection
     <div class="recipe-div">
         <!-- Recipe Image -->
         <div class="ingredients-div">
-            <div class="ingredients-image">
-            <img src="images/elementor-placeholder-image.webp" alt="<?php echo htmlspecialchars($recipe['recipe_name'] ?? 'Recipe Image'); ?>">
-            </div>
+        <div class="ingredients-image">
+    <?php
+    $image_path = "images/recipes/{$recipe['id']}.jpg"; // Dynamically generate the image path
+    if (!file_exists($image_path)) {
+        $image_path = "images/placeholder.webp"; // Fallback to placeholder
+    }
+    ?>
+    <img src="<?php echo $image_path; ?>" alt="<?php echo htmlspecialchars($recipe['recipe_name'] ?? 'Recipe Image'); ?>">
+</div>
             <!-- Recipe Description -->
         <div class="blurb-div">
             <h3>Description</h3>

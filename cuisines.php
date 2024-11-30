@@ -35,24 +35,24 @@
 				<p class="cuisine-caption">Find the flavor your dinner's been <i>missing.</i></p>
         <div class="cuisine-container">
             <!-- Cuisine List -->
-            <ul class="cuisines-list">
-                <?php
-                include 'db_connection.php'; // Include database connection
+						<ul class="cuisines-list">
+    <?php
+    include 'db_connection.php'; // Include database connection
 
-                // Fetch all distinct cuisines
-                $sql = "SELECT DISTINCT cuisine FROM recipes_list WHERE cuisine IS NOT NULL AND cuisine != ''";
-                $result = $conn->query($sql);
+    // Fetch all distinct cuisines in alphabetical order
+    $sql = "SELECT DISTINCT cuisine FROM recipes_list WHERE cuisine IS NOT NULL AND cuisine != '' ORDER BY cuisine ASC";
+    $result = $conn->query($sql);
 
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $cuisine = htmlspecialchars($row['cuisine']);
-                        echo "<li><a href='cuisines.php?cuisine=$cuisine'>$cuisine</a></li>";
-                    }
-                } else {
-                    echo "<li>No cuisines available</li>";
-                }
-                ?>
-            </ul>
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $cuisine = htmlspecialchars($row['cuisine']);
+            echo "<li><a href='cuisines.php?cuisine=$cuisine'>$cuisine</a></li>";
+        }
+    } else {
+        echo "<li>No cuisines available</li>";
+    }
+    ?>
+</ul>
 
             <!-- Recipe Grid -->
             <div class="recipe-grid">
@@ -73,10 +73,17 @@
                             $id = $row['id'];
                             $name = htmlspecialchars($row['recipe_name']);
                             $subtitle = htmlspecialchars($row['recipe_subtitle']);
-                            $placeholderImage = "images/placeholder.webp";
 
-                            echo "<a class='recipe-card' href='recipe.php?id=$id'>";
-                            echo "<img src='$placeholderImage' alt='Image of $name'>";
+                            $image_path = "images/recipes/{$id}.jpg";
+
+																													// Check if the image exists; fallback to a placeholder if it doesn't
+															if (!file_exists($image_path)) {
+																$image_path = "images/placeholder.webp"; // Use a fallback placeholder image
+														}
+
+
+                            echo "<a class='recipe-card' href='new-recipe.php?id=$id'>";
+                            echo "<img src='$image_path' alt='Image of $name'>";
                             echo "<h3>$name</h3>";
                             echo "<p>$subtitle</p>";
                             echo "</a>";
@@ -87,7 +94,7 @@
 
                     $stmt->close();
                 } else {
-                    echo "<p>Select a cuisine to view recipes!</p>";
+                    echo '<p class="cuisine-select">Select a cuisine to view recipes!</p>';
                 }
 
                 $conn->close();
