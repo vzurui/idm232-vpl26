@@ -32,7 +32,7 @@
 
     <main>
         <h2>Cuisines</h2>
-				<p>Find the flavor your dinner's been missing.</p>
+				<p class="cuisine-caption">Find the flavor your dinner's been <i>missing.</i></p>
         <div class="cuisine-container">
             <!-- Cuisine List -->
             <ul class="cuisines-list">
