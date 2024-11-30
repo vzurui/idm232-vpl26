@@ -73,7 +73,7 @@ h2 {
 	color: var(--flamingo-);
 	letter-spacing: 1px;
 	text-align: center;
-	margin: 0.5em 0 -0.5em 0;
+	margin: 1.5em 0 -0.5em 0;
 	padding: 20px 0 40px 0;
 }
 
@@ -183,21 +183,26 @@ button:hover {
 }
 
 .nibbly-colors {
-	margin-left: 6em;
+	margin-left: 1em;
 	margin-right: 9em;
 }
 
 .home-text {
 	font-size: 180%;
-	margin: 0 1em;
+	margin: 0;
 	align-self: center;
 	justify-content: center;
 	text-align: center;
 }
 
-#home-bold {
-	margin-left: 3em;
+.home-text {
+	font-size: 180%;
+	margin: 2em;
+	align-self: center;
+	justify-content: center;
+	text-align: center;
 }
+
 
 #intro {
 	font-size: 430%;
@@ -819,9 +824,11 @@ and (max-width: 425px) {
 	p {
 		margin: 1.5em;
 	}
+
 	h2 {
 		padding-top: 30px;
 	}
+	
 	.sad-glass {
 		width: 11vw;
 		height: auto;

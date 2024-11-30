@@ -34,8 +34,10 @@ $conn->close(); // Close the database connection
 </head>
 <body>
 <!-- search bar-->
-<header class="header">
-<a href="index.html" class="logo"><img src="images/nibbly-logo.png"></a>
+<div class="fixed-container">
+<div class="search-bar">
+  <header class="header">
+    <a href="index.html" class="logo"><img src="images/nibbly-logo.png"></a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
@@ -53,6 +55,8 @@ $conn->close(); // Close the database connection
       </form>
     </div>
   </div>
+</div>
+</div>
 <!--search bar end-->
 
     <h2 class="recipe-header"><?php echo htmlspecialchars($recipe['recipe_name'] ?? 'Single Recipe'); ?></h2>
