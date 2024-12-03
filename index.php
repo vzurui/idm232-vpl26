@@ -27,7 +27,7 @@
   <div class="topnav">
     <div class="search-container">
       <form action="/action_page.php">
-        <input type="text" placeholder="Search Here!" name="search">
+      <input type="text" placeholder="Feelin' Hungry?" name="search">
       </form>
     </div>
   </div>

@@ -141,6 +141,14 @@ footer {
 footer p {
 	color: var(--flamingo-);
 	font-size: 2vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.bottom-text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 button {
@@ -188,7 +196,7 @@ button:hover {
 }
 
 .home-text {
-	font-size: 180%;
+	font-size: 300%;
 	margin: 0;
 	align-self: center;
 	justify-content: center;
@@ -234,11 +242,7 @@ button:hover {
 /* Cuisine List and Recipe Grid Layout */
 
 .cuisine-select {
-	display: flex;
-	flex-direction: row-reverse;
 	margin: 0;
-	background-color: aqua; 
-	text-align: center;           /* Optional: Add padding */
 }
 
 .cuisine-caption {
@@ -291,10 +295,7 @@ button:hover {
 
 /* Recipe Grid Styling */
 .recipe-grid {
-	flex: 3; /* Take up more space than the cuisine list */
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	gap: 30px 20px;
+	display: flex;
 }
 
 /* Individual Recipe Cards */
@@ -517,6 +518,10 @@ border: 2px solid var(--flamingo-);
 	margin: 1em 1em;
 }
 
+.blurb-div li {
+	font-family: var(--font-text);
+}
+
 .ingredients-div {
 	align-items: center;
 
@@ -698,7 +703,6 @@ height: auto;
 }
 
 /*end of hamburger*/
-
 
 
 /* media queries */
