@@ -129,18 +129,18 @@ a:visited {
 
 footer {
 	display: flex;
-	flex-direction: column;
-	color: var(--flamingo-);
+	justify-content: center; 
+	align-items: center; 
+	text-align: center; 
 	background-color: var(--nightlife);
 	font-family: var(--font-title), Arial, Helvetica, sans-serif;
 	padding: 2px;
-	text-align: center;
-	margin: 3em -1.5em -1.5em -1.5em;
+	margin: 0; 
 }
 
 footer p {
 	color: var(--flamingo-);
-	font-size: 2vh;
+	margin: 2.2em 0;
 }
 
 .bottom-text {
@@ -283,9 +283,19 @@ button:hover {
 	text-decoration: underline;
 }
 
+.cuisines-list a.active {
+	color: var(--eclipse);
+	text-decoration: underline;
+}
+
+
 /* Recipe Grid Styling */
 .recipe-grid {
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	align-items: center;
+	gap: 20px 20px;
+	margin: 2em;
 }
 
 /* Individual Recipe Cards */
@@ -465,12 +475,12 @@ a.recipe-image img{
 	padding: 10px;
 }
 
-.recipe-grid {
+.all-recipe-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	align-items: center;
 	gap: 30px 20px;
-	margin: 2em;
+	margin: 2em 3.5em;
 }
 
 .recipe-grid img { 
@@ -504,6 +514,14 @@ border: 2px solid var(--flamingo-);
 	margin: 3em 3em;
 }
 
+.ingredients-list {
+	margin: 1em 2em;
+}
+
+.blurb-div {
+	margin: 2em 3em;
+}
+
 .blurb-div p {
 	margin: 1em 1em;
 }
@@ -514,7 +532,7 @@ border: 2px solid var(--flamingo-);
 
 .ingredients-div {
 	align-items: center;
-
+	margin: 0 3em;
 }
 
 .ingredients-image {

@@ -80,7 +80,7 @@ $conn->close(); // Close the database connection
         </div>
 
             
-            <div>
+            <div class="ingredients-list">
                 <h3>Ingredients</h3>
                 <ul>
                     <?php
@@ -117,7 +117,7 @@ $conn->close(); // Close the database connection
 
 
     <footer>
-        <p><a href="all-recipes.php">Back to All Recipes</a></p>
-    </footer>
+    <p>2024 &copy;. Nibbly</p>
+</footer>
 </body>
 </html>

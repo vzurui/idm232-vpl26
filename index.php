@@ -48,8 +48,7 @@
 <hr class="solid">
 
 <footer>
-  <p><a href="no-search.html">No Search</a></p>
-  <p><a href="search-found.html">Search</a></p>
+    <p>2024 &copy;. Nibbly</p>
 </footer>
 </body>
 </html>

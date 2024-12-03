@@ -39,7 +39,7 @@
 				<p class="cuisine-caption">Find the flavor your dinner's been <i>missing.</i></p>
         <div class="cuisine-container">
             <!-- Cuisine List -->
-						<ul class="cuisines-list">
+            <ul class="cuisines-list">
     <?php
     include 'db_connection.php'; // Include database connection
 
@@ -47,10 +47,17 @@
     $sql = "SELECT DISTINCT cuisine FROM recipes_list WHERE cuisine IS NOT NULL AND cuisine != '' ORDER BY cuisine ASC";
     $result = $conn->query($sql);
 
+    // Check which cuisine is selected
+    $selected_cuisine = isset($_GET['cuisine']) ? htmlspecialchars($_GET['cuisine']) : '';
+
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $cuisine = htmlspecialchars($row['cuisine']);
-            echo "<li><a href='cuisines.php?cuisine=$cuisine'>$cuisine</a></li>";
+            
+            // Add an 'active' class to the selected cuisine
+            $active_class = ($selected_cuisine === $cuisine) ? 'active' : '';
+            
+            echo "<li><a href='cuisines.php?cuisine=$cuisine' class='$active_class'>$cuisine</a></li>";
         }
     } else {
         echo "<li>No cuisines available</li>";
@@ -109,6 +116,6 @@
 
     <footer>
     <p>2024 &copy;. Nibbly</p>
-    </footer>
+</footer>
 </body>
 </html>

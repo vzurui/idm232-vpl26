@@ -35,7 +35,7 @@
 <!--search bar end-->
 
     <h2>All Recipes</h2>
-    <div class="recipe-grid">
+    <div class="all-recipe-grid">
     <?php
     include 'db_connection.php'; // Include the database connection
 
@@ -74,8 +74,8 @@
     ?>
 </div>
 
-    <footer>
+<footer>
     <p>2024 &copy;. Nibbly</p>
-    </footer>
+</footer>
 </body>
 </html>
