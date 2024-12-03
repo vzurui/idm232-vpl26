@@ -75,7 +75,7 @@
 </div>
 
     <footer>
-        <p class="bottom-text">What's cooking, good looking?</p>
+    <p>2024 &copy;. Nibbly</p>
     </footer>
 </body>
 </html>

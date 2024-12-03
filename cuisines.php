@@ -108,7 +108,7 @@
     </main>
 
     <footer>
-        <p><a href="search-found.html">Search</a></p>
+    <p>2024 &copy;. Nibbly</p>
     </footer>
 </body>
 </html>

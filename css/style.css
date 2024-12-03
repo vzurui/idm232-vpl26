@@ -141,8 +141,6 @@ footer {
 footer p {
 	color: var(--flamingo-);
 	font-size: 2vh;
-	justify-content: center;
-	align-items: center;
 }
 
 .bottom-text {
@@ -191,21 +189,13 @@ button:hover {
 }
 
 .nibbly-colors {
-	margin-left: 1em;
-	margin-right: 9em;
+	margin-left: 5em;
+	margin-right: 5em;
 }
 
 .home-text {
-	font-size: 300%;
-	margin: 0;
-	align-self: center;
-	justify-content: center;
-	text-align: center;
-}
-
-.home-text {
-	font-size: 180%;
-	margin: 2em;
+	font-size: 240%;
+	margin: 1em 2em;
 	align-self: center;
 	justify-content: center;
 	text-align: center;
@@ -266,7 +256,7 @@ button:hover {
 	flex: 1; /* Allocate space for the list */
 	max-width: 600px; /* Limit the width */
 	list-style: none; /* Remove bullets */
-	padding: 0;
+	padding: 10px 15px 10px 10px;
 	border-radius: 5px;
 	border: 3.5px solid var(--nightlife);
 	margin: 1.5em;
