@@ -98,7 +98,7 @@
 
                     $stmt->close();
                 } else {
-                    echo '<p class="cuisine-select">Select a cuisine to view recipes!</p>';
+                    echo '<p class="cuisine-select"><-- Select a cuisine to view recipes!</p>';
                 }
 
                 $conn->close();
