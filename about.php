@@ -1,3 +1,9 @@
+<?php
+include 'db_connection.php';
+include 'search_bar.php'; 
+$searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
       <head>
@@ -17,7 +23,7 @@
       <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
       <ul class="menu">
           
-    <li><a href="about.html">About</a></li>
+    <li><a href="about.php">About</a></li>
     <li><a href="cuisines.php">Cuisines</a></li>
     <li><a href="all-recipes.php">All Recipes</a></li>
   </ul>
@@ -25,8 +31,8 @@
   
     <div class="topnav">
       <div class="search-container">
-        <form action="/action_page.php">
-          <input type="text" placeholder="Feelin' Hungry?" name="search">
+        <form action="about.php" method="GET">
+          <input type="text" placeholder="Feelin' Hungry?" name="search" value="<?php echo htmlspecialchars($searchTerm); ?>">
         </form>
       </div>
     </div>
@@ -34,7 +40,16 @@
   </div>
   <!--search bar end-->
   
-		
+	<?php
+// If a search term is provided, show search results
+if (!empty($searchTerm)) {
+    echo '<h2>Search Results for "' . $searchTerm . '"</h2>';
+    echo '<div class="recipe-grid">';
+    handleSearch($searchTerm, $conn); // Use the search function to display results
+    echo '</div>';
+} else {
+    // If no search term, display the "About Us" content
+?>	
 	<h2>About Us</h2>
 	<div class="about">
 	<!-- <img class="about-image" src="images/elementor-placeholder-image.webp" alt="gray-placeholder-image"> -->
@@ -49,7 +64,9 @@
   </p>
   <img class="about-image" src="images/satisfied-user.png">
 	</div>
-
+	<?php
+}
+?>
 
   <footer>
     <p>2024 &copy;. Nibbly</p>

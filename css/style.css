@@ -293,8 +293,8 @@ button:hover {
 .recipe-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	align-items: center;
-	gap: 20px 20px;
+	align-items: start;
+	gap: 20px;
 	margin: 2em;
 }
 
@@ -478,7 +478,7 @@ a.recipe-image img{
 .all-recipe-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	align-items: center;
+	align-items: top;
 	gap: 30px 20px;
 	margin: 2em 3.5em;
 }
@@ -549,7 +549,7 @@ border: 2px solid var(--flamingo-);
 	flex-direction: column;
 	text-align: center;
 	align-items: center;
-	margin: 0 6em;
+	margin: 0 6em 1.7em 6em;
 }
 
 .about p {
