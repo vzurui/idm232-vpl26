@@ -185,7 +185,8 @@ button:hover {
 .nibbly-container {
 	display: flex;
 	flex-direction: row;
-	margin: 5em 2em;
+	justify-content: space-evenly;
+	margin: 9em 2em;
 }
 
 .nibbly-colors {
@@ -799,8 +800,6 @@ a.recipe-image img {
 	border: 3px solid var(--nightlife)
 }
 }
-
-
 
 
 /* mobile queries (750, 320, 425) */
