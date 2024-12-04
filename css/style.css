@@ -363,8 +363,7 @@ a.cuisine {
 
 .nothing-found {
 	display: flex;
-	flex-direction: column;
-	padding: 14em 5em 14em 5em;
+	padding: 2em 1em;
 	margin: 4em;
 }
 
