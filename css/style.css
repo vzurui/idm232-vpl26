@@ -509,7 +509,7 @@ border: 2px solid var(--flamingo-);
 .recipe-div {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: left;
 	align-items: center;
 	margin: 3em 3em;
 }
@@ -517,6 +517,7 @@ border: 2px solid var(--flamingo-);
 .ingredients-list {
 	margin: 1em 2em;
 }
+
 
 .blurb-div {
 	margin: 2em 3em;
