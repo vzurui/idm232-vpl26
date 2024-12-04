@@ -18,7 +18,7 @@ $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
 <div class="fixed-container">
   <div class="search-bar">
     <header class="header">
-      <a href="index.html" class="logo"><img src="images/nibbly-logo.png"></a>
+      <a href="index.php" class="logo"><img src="images/nibbly-logo.png"></a>
       <input class="menu-btn" type="checkbox" id="menu-btn" />
       <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
       <ul class="menu">

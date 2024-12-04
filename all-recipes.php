@@ -1,3 +1,9 @@
+<?php
+include 'db_connection.php';
+include 'search_bar.php'; 
+$searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +18,7 @@
 <div class="fixed-container">
 <div class="search-bar">
   <header class="header">
-    <a href="index.html" class="logo"><img src="images/nibbly-logo.png"></a>
+  <a href="index.php" class="logo"><img src="images/nibbly-logo.png"></a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
@@ -25,14 +31,25 @@
 
   <div class="topnav">
     <div class="search-container">
-      <form action="/action_page.php">
-      <input type="text" placeholder="Feelin' Hungry?" name="search">
+      <form action="all-recipes.php" method="GET">
+      <input type="text" placeholder="Feelin' Hungry?" name="search" value="<?php echo htmlspecialchars($searchTerm); ?>">
       </form>
     </div>
   </div>
 </div>
 </div>
 <!--search bar end-->
+
+<?php
+// If a search term is provided, show search results
+if (!empty($searchTerm)) {
+    echo '<h2>Search Results for "' . $searchTerm . '"</h2>';
+    echo '<div class="recipe-grid">';
+    handleSearch($searchTerm, $conn); // Use the search function to display results
+    echo '</div>';
+} else {
+    // If no search term, display the "About Us" content
+?>	
 
     <h2>All Recipes</h2>
     <div class="all-recipe-grid">
@@ -73,7 +90,9 @@
     $conn->close(); // Close the database connection
     ?>
 </div>
-
+<?php
+}
+?>
 <footer>
     <p>2024 &copy;. Nibbly</p>
 </footer>
