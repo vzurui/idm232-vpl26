@@ -72,7 +72,7 @@ if (!empty($searchTerm)) {
         while ($row = $result->fetch_assoc()) {
             $cuisine = htmlspecialchars($row['cuisine']);
             
-            // Add an 'active' class to the selected cuisine
+            // keeps the cuisine underlined when you click on it
             $active_class = ($selected_cuisine === $cuisine) ? 'active' : '';
             
             echo "<li><a href='cuisines.php?cuisine=$cuisine' class='$active_class'>$cuisine</a></li>";

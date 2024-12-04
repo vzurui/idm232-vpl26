@@ -68,10 +68,6 @@ if (!empty($searchTerm)) {
 
             // Dynamically generate the image path based on the recipe ID
             $image_path = "images/recipes/{$id}.jpg";
-
-            // Check if the image exists; fallback to a placeholder if it doesn't
-            if (!file_exists($image_path)) {
-                $image_path = "images/placeholder.webp"; // Use a fallback placeholder image
             }
 
             // Dynamically generate each recipe card

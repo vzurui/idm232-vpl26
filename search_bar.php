@@ -38,7 +38,6 @@ function handleSearch($searchTerm, $conn) {
             // Display "Nothing Found" section
             echo '<p class="no-results"></p>';
             echo '<div class="nothing-found">';
-            echo '<img class="sad-glass" src="icons/Nothing-Found.png" alt="sad magnifying glass">';
             echo '<p class="no-results">Sorry, no results found. Let\'s plate this search differently.</p>';
             echo '</div>';
         }

@@ -87,9 +87,6 @@ if (!empty($searchTerm)) {
             <div class="ingredients-image">
                 <?php
                 $image_path = "images/recipes/{$recipe['id']}.jpg"; // Dynamically generate the image path
-                if (!file_exists($image_path)) {
-                    $image_path = "images/placeholder.webp"; // Fallback to placeholder
-                }
                 ?>
                 <img class="showcase-image" src="<?php echo $image_path; ?>" alt="<?php echo htmlspecialchars($recipe['recipe_name'] ?? 'Recipe Image'); ?>">
             </div>
