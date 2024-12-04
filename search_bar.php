@@ -19,10 +19,6 @@ function handleSearch($searchTerm, $conn) {
                 $cuisine = htmlspecialchars($row['cuisine']); // Get the cuisine column
                 $image_path = "images/recipes/{$id}.jpg";
 
-                if (!file_exists($image_path)) {
-                    $image_path = "images/placeholder.webp";
-                }
-
                 echo "<a class='recipe-card' href='new-recipe.php?id=$id'>";
                 echo "<img src='$image_path' alt='Image of $name'>";
                 echo "<div class='recipe-info'>";

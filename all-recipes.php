@@ -22,17 +22,16 @@ $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
-        
-    <li><a href="about.php">About</a></li>
-  <li><a href="cuisines.php">Cuisines</a></li>
-  <li><a href="all-recipes.php">All Recipes</a></li>
-</ul>
+        <li><a href="about.php">About</a></li>
+        <li><a href="cuisines.php">Cuisines</a></li>
+        <li><a href="all-recipes.php">All Recipes</a></li>
+    </ul>
   </header>
 
   <div class="topnav">
     <div class="search-container">
       <form action="all-recipes.php" method="GET">
-      <input type="text" placeholder="Feelin' Hungry?" name="search" value="<?php echo htmlspecialchars($searchTerm); ?>">
+        <input type="text" placeholder="Feelin' Hungry?" name="search" value="<?php echo htmlspecialchars($searchTerm); ?>">
       </form>
     </div>
   </div>
@@ -48,14 +47,11 @@ if (!empty($searchTerm)) {
     handleSearch($searchTerm, $conn); // Use the search function to display results
     echo '</div>';
 } else {
-    // If no search term, display the "About Us" content
-?>	
-
+    // If no search term, display all recipes
+?>  
     <h2>All Recipes</h2>
     <div class="all-recipe-grid">
     <?php
-    include 'db_connection.php'; // Include the database connection
-
     // Fetch all recipes from the database
     $sql = "SELECT id, recipe_name, recipe_subtitle FROM recipes_list";
     $result = $conn->query($sql);
@@ -68,6 +64,10 @@ if (!empty($searchTerm)) {
 
             // Dynamically generate the image path based on the recipe ID
             $image_path = "images/recipes/{$id}.jpg";
+
+            // Check if the image exists; fallback to a placeholder if it doesn't
+            if (!file_exists($image_path)) {
+                $image_path = "images/placeholder.webp";
             }
 
             // Dynamically generate each recipe card
@@ -82,12 +82,11 @@ if (!empty($searchTerm)) {
     } else {
         echo "<p>No recipes found!</p>";
     }
-
-    $conn->close(); // Close the database connection
     ?>
-</div>
+    </div>
 <?php
 }
+$conn->close(); // Close the database connection
 ?>
 <footer>
     <p>2024 &copy;. Nibbly</p>
