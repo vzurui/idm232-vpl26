@@ -10,7 +10,7 @@ $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; /
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $searchPerformed ? "Search Results for '$searchTerm'" : "Single Recipe"; ?></title>
+    <title><?php echo htmlspecialchars($recipe['recipe_name'] ?? 'Single Recipe'); ?></title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
