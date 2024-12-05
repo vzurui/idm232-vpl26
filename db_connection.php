@@ -1,6 +1,6 @@
 <?php
 // Load environment variables
-$host = getenv('DB_SERVER') ?: 'localhost';
+$host = getenv('DB_SERVER') ?: 'localhost'; //fall back values
 $username = getenv('DB_USERNAME') ?: 'root';
 $password = getenv('DB_PASSWORD') ?: 'root';
 $database = getenv('DB_NAME') ?: 'idm232_db';
