@@ -577,7 +577,7 @@ height: auto;
 .header {
 	display: flex;
 	align-items: center;
-	padding: 10px 20px 5px 20px; /* Add padding for spacing */
+	padding: 10px 20px 5px 20px; 
 	margin: 0;
 }
 
@@ -589,7 +589,6 @@ height: auto;
 	justify-content: left;
 	gap: 20px; /* Space between menu items */
 }
-
 
 .header li a {
 	text-decoration: none;
@@ -645,9 +644,10 @@ height: auto;
 	display: flex;
   cursor: pointer;
   position: fixed;
-  top: 15px; /* Adjust vertical alignment */
-  right: 20px; /* Align it to the right */
+  top: -5px; 
+  right: 20px; 
   z-index: 10;
+	transform: scale(1.3);
 }
 
 .header .menu-icon {
@@ -672,7 +672,7 @@ height: auto;
 .header .menu-icon .navicon:after {
   background: var(--orchid-);
   content: '';
-  display: block;
+  display: block; 
   height: 120%;
   position: absolute;
   transition: all .3s ease-out;
@@ -697,8 +697,8 @@ height: auto;
 	display: flex;
   flex-direction: column;
   position: absolute;
-  top: 60px; /* Position below the header */
-  right: 20px; /* Align the mobile menu dropdown to the right */
+  top: 116px; /* Position below the header */
+  left: -2px; /* Align the mobile menu dropdown to the left */
   background: var(--eclipse);
   padding: 20px;
   border-radius: 8px;
@@ -962,45 +962,21 @@ height: auto;
     margin: 1.5em 0;
     line-height: 1.6;
   }
+	.header .menu {
+		display: none; /* Hide desktop menu */
+	}
+
+	.menu-icon {
+		display: block; /* Show hamburger icon */
+	}
+	
+	form {
+		width: 60%;
+		display: flex;
+		justify-content: center;
+	}
 }
 
-/* For screens larger than 800px (Desktop View) */
-@media screen and (min-width: 801px) {
-  .menu {
-    display: flex; /* Show the desktop menu */
-    justify-content: center;
-    gap: 40px;
-  }
-
-  .menu-icon {
-    display: none; /* Hide the hamburger icon */
-  }
-}
-
-/* For screens 800px and below (Mobile View) */
-@media screen and (max-width: 800px) {
-  .menu {
-    display: none; /* Hide the desktop menu */
-  }
-
-  .menu-icon {
-    display: block; /* Show the hamburger icon */
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    z-index: 10;
-  }
-
-  .menu-icon .navicon {
-    width: 25px; /* Adjust icon size */
-    height: 3px;
-  }
-
-  .menu-icon .navicon:before,
-  .menu-icon .navicon:after {
-    height: 3px; /* Match icon line thickness */
-  }
-}
 
 /* For screens between 500px and 700px */
 @media screen and (max-width: 700px) {
@@ -1122,6 +1098,11 @@ height: auto;
     font-size: 1.3rem;
     margin: 1em 0;
   }
+	form {
+		width: 60%;
+		display: flex;
+		justify-content: center;
+	}
 }
 
 /* For screens smaller than 500px */
