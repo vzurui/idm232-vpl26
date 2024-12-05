@@ -1,6 +1,6 @@
 <?php
-include 'db_connection.php';
-include 'search_bar.php'; 
+include 'db_connection.php'; //include connection
+include 'search_bar.php'; //include search bar
 $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
 ?>
 
@@ -60,6 +60,7 @@ if (!empty($searchTerm)) {
 <?php
 }
 ?>
+<!-- footer -->
 <footer>
   <p>2024 &copy;. Nibbly</p>
 </footer>

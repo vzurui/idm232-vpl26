@@ -1,6 +1,6 @@
 <?php
-include 'db_connection.php';
-include 'search_bar.php'; 
+include 'db_connection.php'; // include connection
+include 'search_bar.php'; // include search bar
 $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
 ?>
 
@@ -52,7 +52,6 @@ if (!empty($searchTerm)) {
 ?>	
 	<h2>About Us</h2>
 	<div class="about">
-	<!-- <img class="about-image" src="images/elementor-placeholder-image.webp" alt="gray-placeholder-image"> -->
 	<p>At Nibbly, we believe every meal is an opportunity to create something special. We’re here to transform your everyday cooking into flavor-packed, feel-good moments you’ll look forward to. Whether it’s a quick fix for a busy day or an adventure in bold, global flavors, Nibbly makes cooking simple, exciting, and absolutely delicious.
   </p>
   <img class="about-image" src="images/delicious-heart.png">
@@ -67,7 +66,7 @@ if (!empty($searchTerm)) {
 	<?php
 }
 ?>
-
+<!-- footer -->
   <footer>
     <p>2024 &copy;. Nibbly</p>
 </footer>

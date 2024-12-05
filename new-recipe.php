@@ -124,7 +124,7 @@ if (!empty($searchTerm)) {
 }
 ?>
 </div>
-
+<!-- footer -->
 <footer>
     <p>2024 &copy;. Nibbly</p>
 </footer>

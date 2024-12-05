@@ -1,6 +1,6 @@
 <?php
-include 'db_connection.php';
-include 'search_bar.php'; 
+include 'db_connection.php'; // include connection
+include 'search_bar.php'; // include search bar
 $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
 ?>
 
@@ -105,12 +105,6 @@ if (!empty($searchTerm)) {
 
                             $image_path = "images/recipes/{$id}.jpg";
 
-																													// Check if the image exists; fallback to a placeholder if it doesn't
-															if (!file_exists($image_path)) {
-																$image_path = "images/placeholder.webp"; // Use a fallback placeholder image
-														}
-
-
                             echo "<a class='recipe-card' href='new-recipe.php?id=$id'>";
                             echo "<img src='$image_path' alt='Image of $name'>";
                             echo "<h3>$name</h3>";
@@ -136,6 +130,7 @@ if (!empty($searchTerm)) {
     <?php
 }
 ?>
+<!-- footer -->
     <footer>
     <p>2024 &copy;. Nibbly</p>
 </footer>
