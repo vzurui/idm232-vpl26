@@ -123,7 +123,6 @@ if (!empty($searchTerm)) {
 
                     $stmt->close();
                 } else {
-                    echo '<p class="cuisine-select"></p>';
                     echo '<p class="cuisine-select">Select a cuisine to view more!</p>';
                 }
 
