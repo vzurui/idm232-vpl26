@@ -73,13 +73,13 @@ if (!empty($searchTerm)) {
     <h2 class="recipe-header"><?php echo htmlspecialchars($recipe['recipe_name'] ?? 'Single Recipe'); ?></h2> 
     <hr class="solid">
          <!-- Add servings and cook_time -->
-         <div class="recipe-details">
+    <div class="recipe-details">
         <div class="details-row">
-        <p><strong>Cuisine:</strong> <?php echo htmlspecialchars($recipe['cuisine'] ?? 'N/A'); ?></p>
-        <p><strong>Cook Time:</strong> <?php echo htmlspecialchars($recipe['cook_time'] ?? 'N/A'); ?> mins</p>
-        <p><strong>Servings:</strong> <?php echo htmlspecialchars($recipe['servings'] ?? 'N/A'); ?></p>
-    </div>
+            <p><strong>Cuisine:</strong> <?php echo htmlspecialchars($recipe['cuisine'] ?? 'N/A'); ?></p>
+            <p><strong>Cook Time:</strong> <?php echo htmlspecialchars($recipe['cook_time'] ?? 'N/A'); ?> mins</p>
+            <p><strong>Servings:</strong> <?php echo htmlspecialchars($recipe['servings'] ?? 'N/A'); ?></p>
         </div>
+    </div>
 
     
     <div class="ingredients-div">

@@ -51,6 +51,8 @@
 	--font-bold: 'fustat', Arial, Helvetica, sans-serif;
 }
 
+/* general stylings */
+
 body {
 	background-color: var(--pearl-powder);
 	margin: 0;
@@ -103,7 +105,29 @@ p {
 	max-width: 115ch;
 }
 
-nav { /* nav bar */
+button {
+	background-color: var(--orchid-);
+	border-radius: 10px;
+	color: var(--pearl-powder);
+	font-family: var(--font-light);
+	cursor: pointer;
+	font-size: 200%;
+	padding: 20px 15px;
+	border: none;
+	margin: 0 0.6em;
+}
+
+button:hover {
+  background-color: var(--nightlife);
+	color: var(--flamingo-);
+	font-family: var(--font-bold);
+	transform: scale(1.1);
+}
+
+
+/* nav bar */
+
+nav { 
 	font-family: var(--font-text);
 	font-size: 200%;
 	text-align: center;
@@ -129,6 +153,7 @@ a:visited {
 }
 
 /* footer stylings */
+
 footer { 
 	display: flex;
 	justify-content: center; 
@@ -153,25 +178,6 @@ footer p {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-button {
-	background-color: var(--orchid-);
-	border-radius: 10px;
-	color: var(--pearl-powder);
-	font-family: var(--font-light);
-	cursor: pointer;
-	font-size: 200%;
-	padding: 20px 15px;
-	border: none;
-	margin: 0 0.6em;
-}
-
-button:hover {
-  background-color: var(--nightlife);
-	color: var(--flamingo-);
-	font-family: var(--font-bold);
-	transform: scale(1.1);
 }
 
 .categories{
@@ -230,7 +236,7 @@ button:hover {
 	margin-top: 0.5em;
 }
 
-/* cuisine page */
+/* cuisine filter page */
 
 /* Cuisine List and Recipe Grid Layout */
 
@@ -255,7 +261,7 @@ button:hover {
 	margin: 2em 1em; 
 }
 
-/* Cuisines List Styling */
+/* Cuisines List Styling, when user selects a cuisine */
 .cuisines-list {
 	flex: 1; 
 	max-width: 600px; 
@@ -292,7 +298,7 @@ button:hover {
 	text-decoration: underline;
 }
 
-/* Recipe Grid Page Styling */
+/* Recipe Grid Page Styling, displays all recipes */
 .recipe-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -301,7 +307,7 @@ button:hover {
 	margin: 2em;
 }
 
-/* Individual Recipe Cards */
+/* Individual Recipe Cards, each recipe box in grid */
 .recipe-card {
 	display: block;
 	text-align: center;
@@ -362,7 +368,7 @@ a.cuisine {
 }
 
 
-/*no search found page stylings */
+/* no search found page stylings */
 
 .nothing-found {
 	display: flex;
@@ -395,7 +401,7 @@ a.cuisine {
 	margin: 4em;
 }
 
-/*search bar stylings */
+/* search bar stylings */
 
 .menu {
 	width: 75%;
@@ -417,29 +423,28 @@ form {
 
 /* Search Bar Styles */
 .topnav {
-	padding: 15px 0; /* Add spacing for the search bar */
-	background-color: var(--pearl-powder); /* Light background for the search bar */
-	border-bottom: 3px solid var(--nightlife); /* Optional: Border between header and search bar */
+	padding: 15px 0;
+	background-color: var(--pearl-powder); 
+	border-bottom: 3px solid var(--nightlife); 
 }
 
 .fixed-container {
-	position: fixed; /* Stick the container to the top */
-	top: 0;          /* Align to the very top of the viewport */
-	width: 100%;     /* Make it span the full width of the page */
-	z-index: 100;   /* Ensure it appears above other elements */
+	position: fixed; 
+	top: 0;          
+	width: 100%;    
+	z-index: 100;   
 }
-
 
 .topnav input[type="text"] {
 	padding: 10px;
 	font-size: 14px;
 	border-radius: 8px;
-	border: 2px solid var(--nightlife); /* Border color for search box */
-	width: 70%; /* Adjust width as needed */
-	max-width: 600px; /* Prevent it from becoming too wide */
+	border: 2px solid var(--nightlife); 
+	width: 70%;
+	max-width: 600px; 
 }
 
-/* search bar stylings */
+/* placeholder images */
 
 .placeholder-image {
 	display: block;
@@ -454,13 +459,15 @@ form {
 	height: 30%;
 }
 
+/* recipe images sizes */
+
 a.recipe-image img{ 
 	width: auto;
 	height: 45%;
 	padding: 10px;
 }
 
-/* all recipes page */
+/* all recipes page, central hub */
 
 .all-recipe-grid {
 	display: grid;
@@ -492,7 +499,7 @@ transform: scale(1.02);
 border: 2px solid var(--flamingo-);
 }
 
-/* single recipe page */
+/* single recipe pages, user selects recipe page to open */
 
 hr.solid {
   border-top: 3px solid var(--mustard-);
@@ -577,7 +584,7 @@ hr.solid {
 }
 
 
-/* about page */
+/* about page, learn more about the website */
 
 .about {
 	display: flex;
@@ -606,7 +613,7 @@ height: auto;
 
 /*hamburger menu*/
 
-/* header */
+/* header of hamburger */
 
 .search-bar {
 	background-color: var(--eclipse); /* Background color for the header */
@@ -659,7 +666,7 @@ height: auto;
 	height: auto;
 }
 
-/* menu */
+/* hamburger menu*/
 
 .header .menu {
 	display: flex;
@@ -676,7 +683,7 @@ height: auto;
  margin: 0 16px;
 }
 
-/* menu icon */
+/* hamburger menu icon */
 
 .menu-icon {
 	display: flex;
@@ -725,7 +732,7 @@ height: auto;
   top: -8px;
 }
 
-/* menu btn */
+/* hamburger menu btn */
 
 .header .menu-btn {
   display: none;
@@ -762,7 +769,7 @@ height: auto;
   top: 0;
 }
 
-/*end of hamburger*/
+/* end of hamburger*/
 
 
 /* media queries */
@@ -1006,7 +1013,6 @@ height: auto;
 		justify-content: center;
 	}
 }
-
 
 /* For screens between 500px and 700px */
 @media screen and (max-width: 700px) {
