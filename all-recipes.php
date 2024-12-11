@@ -53,7 +53,7 @@ if (!empty($searchTerm)) {
     <div class="all-recipe-grid">
     <?php
     // Fetch all recipes from the database
-    $sql = "SELECT id, recipe_name, recipe_subtitle FROM recipes_list";
+    $sql = "SELECT id, recipe_name, recipe_subtitle, cook_time, servings FROM recipes_list";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -61,6 +61,8 @@ if (!empty($searchTerm)) {
             $id = $row['id']; // Fetch the unique recipe ID
             $name = htmlspecialchars($row['recipe_name'] ?? 'No Name Available'); // Fetch the recipe name
             $subtitle = htmlspecialchars($row['recipe_subtitle'] ?? 'No Subtitle Available'); // Fetch the recipe subtitle
+            $cook_time = htmlspecialchars($row['cook_time'] ?? 'N/A'); // Fetch the cook time
+            $servings = htmlspecialchars($row['servings'] ?? 'N/A'); // Fetch the servings
 
             // Dynamically generate the image path based on the recipe ID
             $image_path = "images/recipes/{$id}.jpg";
@@ -71,6 +73,10 @@ if (!empty($searchTerm)) {
             echo "<div class='recipe-info'>";
             echo "<h3>$name</h3>";
             echo "<p>$subtitle</p>";
+            echo "<div class='recipe-details'>";
+            echo "<p>Cook Time: $cook_time mins</p>";
+            echo "<p>Servings: $servings</p>";
+            echo "</div>";
             echo "</div>";
             echo "</a>";
         }
