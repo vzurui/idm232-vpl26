@@ -583,22 +583,6 @@ hr.solid {
     white-space: nowrap;
 }
 
-.recipe-info {
-  color: var(--orchid-);
-  text-align: center;
-  margin-bottom: 2em;
-  font-size: 1.1rem; 
-}
-
-.recipe-info p {
-  font-size: 1.4rem; 
-    margin: 0; 
-    line-height: 1.4; 
-    flex: 1; 
-    white-space: nowrap;
-}
-
-
 /* about page, learn more about the website */
 
 .about {
