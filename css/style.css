@@ -74,7 +74,7 @@ h2 {
 	letter-spacing: 1px;
 	text-align: center;
 	margin: 1.5em 0 -0.5em 0;
-	padding: 20px 0 40px 0;
+	padding: 12px 0 40px 0;
 }
 
 h3 {
@@ -382,12 +382,6 @@ a.cuisine {
 	margin: -2.75em 0 1em 0;
 }
 
-hr.solid { /* divider stylings */
-	border-top: 2px solid var(--orchid-);
-	border-radius: 4px;
-	margin: 2em 25em 1em 20em;
-}
-
 .bold { /* bold text styling */
 	font-family: var(--font-bold);
 	font-weight: 900;
@@ -500,6 +494,14 @@ border: 2px solid var(--flamingo-);
 
 /* single recipe page */
 
+hr.solid {
+  border-top: 3px solid var(--mustard-);
+  border-radius: 4px;
+  width: 50%; 
+  margin: -1em auto;
+  opacity: 0.9; 
+}
+
 .recipe-div {
 	display: flex;
 	flex-direction: column;
@@ -508,13 +510,21 @@ border: 2px solid var(--flamingo-);
 	margin: 3em 3em;
 }
 
+.recipe-header {
+  text-align: center;
+  font-size: 3.4rem; 
+  margin: 0.8em 0 0 0.4em; 
+  color: var(--flamingo-);
+  padding: 0;
+  padding-top: 20px;
+}
+
 .ingredients-list {
 	margin: 1em 2em;
 }
 
-
 .blurb-div {
-	margin: 2em 3em;
+	margin: 3em 3em;
 }
 
 .blurb-div p {
@@ -537,6 +547,36 @@ border: 2px solid var(--flamingo-);
 	margin-bottom: 4em;
 }
 
+.recipe-details {
+  text-align: center;
+    margin-bottom: 2em;
+    font-size: 1.1rem; 
+    color: var(--nightlife); 
+}
+
+.recipe-details .details-row {
+  display: flex;
+  justify-content: space-between; 
+  margin: 0;
+}
+
+.details-row {
+  display: flex;
+  justify-content: center; 
+  gap: 100px; 
+  text-align: center;
+  flex-wrap: wrap; 
+}
+
+.details-row p {
+  font-size: 1.4rem; 
+    margin: 0; 
+    line-height: 1.4; 
+    flex: 1; 
+    white-space: nowrap;
+}
+
+
 /* about page */
 
 .about {
@@ -557,10 +597,6 @@ border: 2px solid var(--flamingo-);
 .about-image {
 width: 15%;
 height: auto;
-}
-
-.recipe-header {
-	margin: 1.2em 0 -1em 0;
 }
 
 .showcase-image {

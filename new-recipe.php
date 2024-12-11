@@ -70,8 +70,18 @@ if (!empty($searchTerm)) {
 
     // Display the single recipe
     ?>
-    <h2 class="recipe-header"><?php echo htmlspecialchars($recipe['recipe_name'] ?? 'Single Recipe'); ?></h2>
+    <h2 class="recipe-header"><?php echo htmlspecialchars($recipe['recipe_name'] ?? 'Single Recipe'); ?></h2> 
     <hr class="solid">
+         <!-- Add servings and cook_time -->
+         <div class="recipe-details">
+        <div class="details-row">
+        <p><strong>Cuisine:</strong> <?php echo htmlspecialchars($recipe['cuisine'] ?? 'N/A'); ?></p>
+        <p><strong>Cook Time:</strong> <?php echo htmlspecialchars($recipe['cook_time'] ?? 'N/A'); ?> mins</p>
+        <p><strong>Servings:</strong> <?php echo htmlspecialchars($recipe['servings'] ?? 'N/A'); ?></p>
+    </div>
+        </div>
+
+    
     <div class="ingredients-div">
         <div class="ingredients-image">
             <?php
@@ -82,6 +92,8 @@ if (!empty($searchTerm)) {
             ?>
             <img class="showcase-image" src="<?php echo $image_path; ?>" alt="<?php echo htmlspecialchars($recipe['recipe_name'] ?? 'Recipe Image'); ?>">
         </div>
+
+   
 
         <div class="blurb-div">
             <h3>Description</h3>
