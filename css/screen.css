@@ -1,0 +1,86 @@
+@font-face {
+	font-family: 'funtonalie';
+	src: url('../fonts/funtonalie/Funtonalie.ttf') format('truetype');
+	font-weight: normal;
+  font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'fustat-light';
+	src: url('../fonts/fustat_5.1.0/ttf/fustat-latin-200-normal.ttf') format('truetype');
+	font-weight: normal;
+  font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'fustat';
+	src: url('../fonts/fustat_5.1.0/ttf/fustat-latin-300-normal.ttf') format('truetype');
+	font-weight: normal;
+  font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'fustat-bold';
+	src: url('../fonts/fustat_5.1.0/ttf/fustat-latin-800-normal.ttf') format('truetype');
+	font-weight: normal;
+  font-style: normal;
+	font-display: swap;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+
+:root {
+	--pearl-powder: #FBFDEC;
+	--eclipse: #0E193E;
+	--flamingo-: #FD4A7F;
+	--mustard-: #FAC748;
+	--orchid-: #8390FA;
+	--nightlife: #1D2F6F;
+
+	--font-title: 'funtonalie', Georgia, 'Times New Roman', Times, serif;
+	--font-light: 'fustat-light', Arial, Helvetica, sans-serif;
+	--font-text: 'fustat', Arial, Helvetica, sans-serif;
+	--font-bold: 'fustat', Arial, Helvetica, sans-serif;
+}
+
+body {
+	background-color: var(--pearl-powder);
+	margin: 4em 15em 6em 15em;
+}
+
+h1 {
+	font-family: var(--font-title);
+	color: var(--nightlife);
+	text-align: left;
+	margin-top: 1.5em;
+	font-size: 230%;
+	letter-spacing: 1px;
+}
+
+h2 {
+	font-family: var(--font-bold);
+	text-align: left;
+	font-style: italic;
+	color: var(--nightlife);
+	text-decoration: underline;
+	text-decoration-color: var(--flamingo-);
+	margin: 0.9em 0 0.5em 1.2em;
+	font-size: 150%;
+}
+
+p {
+	font-family: var(--font-text);
+	color: var(--eclipse);
+	text-align: left;
+	font-size: 130%;
+	margin: 1.2em 0 1em 2.5em;
+	line-height: 1.5;
+}
