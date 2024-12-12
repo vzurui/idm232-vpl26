@@ -531,7 +531,7 @@ hr.solid {
 }
 
 .blurb-div {
-	margin: 3em 3em;
+	margin: 1em 3em 3em 3em;
 }
 
 .blurb-div p {
@@ -587,7 +587,7 @@ hr.solid {
 
 .about {
 	display: flex;
-	font-size: 117%;
+	font-size: 90%;
 	justify-content: center;
 	flex-direction: column;
 	text-align: center;
@@ -877,7 +877,7 @@ height: auto;
 
   .about p {
     flex: 1;
-    font-size: 2rem;
+    font-size: 1.75em;
     line-height: 1.8;
     margin: 0 20px;
   }

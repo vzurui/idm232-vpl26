@@ -1,6 +1,6 @@
 <?php
 include 'db_connection.php'; // include connection
-include 'search_bar.php'; // include search bar
+include 'search_bar.php';    // include search bar logic
 $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
 ?>
 
@@ -14,7 +14,7 @@ $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- search bar-->
+<!-- search bar -->
 <div class="fixed-container">
 <div class="search-bar">
   <header class="header">
@@ -22,11 +22,10 @@ $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
-        
-  <li><a href="about.php">About</a></li>
-  <li><a href="cuisines.php">Cuisines</a></li>
-  <li><a href="all-recipes.php">All Recipes</a></li>
-</ul>
+        <li><a href="about.php">About</a></li>
+        <li><a href="cuisines.php">Cuisines</a></li>
+        <li><a href="all-recipes.php">All Recipes</a></li>
+    </ul>
   </header>
 
   <div class="topnav">
@@ -38,100 +37,98 @@ $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
   </div>
 </div>
 </div>
-<!--search bar end-->
+<!-- search bar end -->
 
 <?php
-// If a search term is provided, show search results
 if (!empty($searchTerm)) {
     echo '<h2>Search Results for "' . $searchTerm . '"</h2>';
     echo '<div class="recipe-grid">';
-    handleSearch($searchTerm, $conn); // Use the search function to display results
+    handleSearch($searchTerm, $conn); 
     echo '</div>';
 } else {
-    // If no search term, display the "About Us" content
-?>	
+?>
 
+<main>
+    <h2>Cuisines</h2>
+    <p class="cuisine-caption">Find the flavor your dinner's been <i>missing.</i></p>
+    <div class="cuisine-container">
+        <!-- cuisine List -->
+        <ul class="cuisines-list">
+        <?php
+        // fetch all distinct cuisines in alphabetical order
+        $sql = "SELECT DISTINCT cuisine FROM recipes_list WHERE cuisine IS NOT NULL AND cuisine != '' ORDER BY cuisine ASC";
+        $result = $conn->query($sql);
 
-    <main>
-        <h2>Cuisines</h2>
-				<p class="cuisine-caption">Find the flavor your dinner's been <i>missing.</i></p>
-        <div class="cuisine-container">
-            <!-- Cuisine List -->
-            <ul class="cuisines-list">
-    <?php
-    include 'db_connection.php'; // Include database connection
+        // check which cuisine is selected
+        $selected_cuisine = isset($_GET['cuisine']) ? htmlspecialchars($_GET['cuisine']) : '';
 
-    // Fetch all distinct cuisines in alphabetical order
-    $sql = "SELECT DISTINCT cuisine FROM recipes_list WHERE cuisine IS NOT NULL AND cuisine != '' ORDER BY cuisine ASC";
-    $result = $conn->query($sql);
-
-    // Check which cuisine is selected
-    $selected_cuisine = isset($_GET['cuisine']) ? htmlspecialchars($_GET['cuisine']) : '';
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $cuisine = htmlspecialchars($row['cuisine']);
-            
-            // keeps the cuisine underlined when you click on it
-            $active_class = ($selected_cuisine === $cuisine) ? 'active' : '';
-            
-            echo "<li><a href='cuisines.php?cuisine=$cuisine' class='$active_class'>$cuisine</a></li>";
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $cuisine = htmlspecialchars($row['cuisine']);
+                // keeps the cuisine underlined when clicked
+                $active_class = ($selected_cuisine === $cuisine) ? 'active' : '';
+                echo "<li><a href='cuisines.php?cuisine=$cuisine' class='$active_class'>$cuisine</a></li>";
+            }
+        } else {
+            echo "<li>No cuisines available</li>";
         }
-    } else {
-        echo "<li>No cuisines available</li>";
-    }
-    ?>
-</ul>
+        ?>
+        </ul>
 
-            <!-- Recipe Grid -->
-            <div class="recipe-grid">
-                <?php
-                // Check if a specific cuisine is selected
-                $selected_cuisine = isset($_GET['cuisine']) ? htmlspecialchars($_GET['cuisine']) : '';
+        <!-- recipe Grid -->
+        <div class="recipe-grid">
+        <?php
+        if (!empty($selected_cuisine)) {
+            // fetch recipes for the selected cuisine along with cook time and servings
+            $sql = "SELECT id, recipe_name, recipe_subtitle, cook_time, servings FROM recipes_list WHERE cuisine = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("s", $selected_cuisine);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
-                if (!empty($selected_cuisine)) {
-                    // Fetch recipes for the selected cuisine
-                    $sql = "SELECT id, recipe_name, recipe_subtitle FROM recipes_list WHERE cuisine = ?";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->bind_param("s", $selected_cuisine);
-                    $stmt->execute();
-                    $result = $stmt->get_result();
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $id = $row['id'];
+                    $name = htmlspecialchars($row['recipe_name']);
+                    $subtitle = htmlspecialchars($row['recipe_subtitle']);
+                    $cook_time = htmlspecialchars($row['cook_time'] ?? 'N/A');
+                    $servings = htmlspecialchars($row['servings'] ?? 'N/A');
 
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            $id = $row['id'];
-                            $name = htmlspecialchars($row['recipe_name']);
-                            $subtitle = htmlspecialchars($row['recipe_subtitle']);
+                    $image_path = "images/recipes/{$id}.jpg";
 
-                            $image_path = "images/recipes/{$id}.jpg";
-
-                            echo "<a class='recipe-card' href='new-recipe.php?id=$id'>";
-                            echo "<img src='$image_path' alt='Image of $name'>";
-                            echo "<h3>$name</h3>";
-                            echo "<p>$subtitle</p>";
-                            echo "</a>";
-                        }
-                    } else {
-                        echo "<p>No recipes found for $selected_cuisine cuisine.</p>";
-                    }
-
-                    $stmt->close();
-                } else {
-                  echo '<p class="cuisine-select"></p>';
-
-                    echo '<p class="cuisine-select">Select a cuisine to view more!</p>';
+                    echo "<a class='recipe-card' href='new-recipe.php?id=$id'>";
+                    echo "<img src='$image_path' alt='Image of $name'>";
+                    echo "<div class='recipe-info'>";
+                    echo "<h3>$name</h3>";
+                    echo "<p>$subtitle</p>";
+                    echo "<div class='recipe-details'>";
+                    echo "<p>Cook Time: $cook_time mins</p>";
+                    echo "<p>Servings: $servings</p>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</a>";
                 }
+            } else {
+                echo "<p>No recipes found for $selected_cuisine cuisine.</p>";
+            }
 
-                $conn->close();
-                ?>
-            </div>
+            $stmt->close();
+        } else {
+            echo '<p></p>'; // empty text to center next text
+            echo '<p class="cuisine-select">Select a cuisine to view more!</p>';
+        }
+
+        $conn->close();
+        ?>
         </div>
-    </main>
-    <?php
+    </div>
+</main>
+
+<?php
 }
 ?>
-<!-- footer -->
-    <footer>
+<!-- Footer -->
+<footer>
     <p>2024 &copy;. Nibbly</p>
 </footer>
 </body>
