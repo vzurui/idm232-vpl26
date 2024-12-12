@@ -65,6 +65,7 @@ if (!empty($searchTerm)) {
 	</div>
 	<?php
 }
+$conn->close();
 ?>
 <!-- footer -->
   <footer>

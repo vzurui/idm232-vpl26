@@ -43,4 +43,5 @@ function handleSearch($searchTerm, $conn) {
         return false;
     }
 }
+
 ?>

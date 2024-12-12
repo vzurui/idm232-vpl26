@@ -134,6 +134,7 @@ if (!empty($searchTerm)) {
     </div>
     <?php
 }
+$conn->close();
 ?>
 </div>
 <!-- footer -->
