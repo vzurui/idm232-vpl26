@@ -154,38 +154,43 @@ a:visited {
 
 /* footer stylings */
 
-footer { 
-	display: flex;
-	justify-content: center; 
-	align-items: center; 
-	text-align: center; 
-	background-color: var(--nightlife);
-	font-family: var(--font-title), Arial, Helvetica, sans-serif;
-	padding: 2px;
-	margin: 4em 0 0 0; 
+footer {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  background-color: var(--nightlife);
+  font-family: var(--font-title), Arial, Helvetica, sans-serif;
+  padding: 25px;
+  margin: 5em 0 0 0; 
 }
 
 footer p { 
-	color: var(--flamingo-);
-	margin: 2.2em 0;
+  color: var(--flamingo-);
+  margin: 0.5em 0; /* Reduced vertical margin */
+  font-size: 100%;
 }
 
 .footer-links {
-	font-size: 180%;
+  font-size: 180%;
 }
 
 .bottom-text {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.categories{
-	margin: -1em 5em;
-	padding: 20px;
-	display: flex;
-	justify-content: center;
+.categories {
+  margin: -1em 5em;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
 
+.help-button {
+  font-size: 140%;
 }
 
 /* home page */
@@ -608,6 +613,23 @@ height: auto;
 .showcase-image {
 width: 70%;
 height: auto;
+}
+
+/* help page */
+
+.help-page {
+  text-align: center;
+  font-size: 110%;
+  margin: 8em 2em;
+}
+
+.help-header {
+  font-size: 300%;
+  padding: 0;
+}
+
+.underlined {
+  text-decoration: underline;
 }
 
 /*hamburger menu*/
