@@ -904,6 +904,15 @@ height: auto;
     line-height: 1.8;
     margin: 0 20px;
   }
+
+  .help-page {
+    font-size: 1.2rem; 
+    margin: 7em 3em; 
+  }
+
+  .help-header {
+    font-size: 3.5rem; 
+  }
 }
 
 /* For screens between 700px and 1200px */
@@ -1034,6 +1043,15 @@ height: auto;
 		display: flex;
 		justify-content: center;
 	}
+
+  .help-page {
+    font-size: 1.1rem;
+    margin: 8em 2em; 
+  }
+
+  .help-header {
+    font-size: 3rem;
+  }
 }
 
 /* For screens between 500px and 700px */
@@ -1161,6 +1179,15 @@ height: auto;
 		display: flex;
 		justify-content: center;
 	}
+
+  .help-page {
+    font-size: 1rem;
+    margin: 6em 1.5em; 
+  }
+
+  .help-header {
+    font-size: 2.5rem; 
+  }
 }
 
 /* For screens smaller than 500px */
@@ -1298,6 +1325,15 @@ height: auto;
   .about p {
     font-size: 1.2rem;
     line-height: 1.4;
+  }
+
+    .help-page {
+    font-size: 0.9rem; 
+    margin: 6em 1em; 
+  }
+
+  .help-header {
+    font-size: 2rem; 
   }
 }
 
