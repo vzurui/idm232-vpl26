@@ -75,7 +75,7 @@ h2 {
 	color: var(--flamingo-);
 	letter-spacing: 1px;
 	text-align: center;
-	margin: 1.5em 0 -0.5em 0;
+	margin: 1.5em 30px -0.5em 3px;
 	padding: 12px 0 40px 0;
 }
 
@@ -1152,12 +1152,15 @@ height: auto;
 
   .blurb-div h3,
   .ingredients-list h3 {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
   }
 
-  .blurb-div p,
+  .blurb-div p {
+    font-size: 1.4em;
+  }
+  
   .ingredients-list li {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
   .recipe-details {
     font-size: 1rem; 
@@ -1318,13 +1321,15 @@ height: auto;
 
   .blurb-div h3,
   .ingredients-list h3 {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     text-align: center;
   }
 
-  .blurb-div p,
+  .blurb-div p {
+    font-size: 1.3em;
+  }
   .ingredients-list li {
-    font-size: 0.9rem;
+    font-size: 1.3em;
     text-align: justify;
   }
 
@@ -1339,7 +1344,7 @@ height: auto;
   }
 
   .details-row p {
-    font-size: 1rem; /* Adjust font size for small screens */
+    font-size: 1.3rem; /* Adjust font size for small screens */
     text-align: center; /* Center text for smaller layout */
     line-height: 1.6; /* Increase line spacing */
   }
