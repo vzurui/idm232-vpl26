@@ -81,7 +81,8 @@ $conn->close(); // close connection
 
 <!-- footer -->
 <footer>
-    <p>2024 &copy;. Nibbly</p>
+  <p class="help-button"><a href="help.php">Need Help?</a></p>
+  <p>2024 &copy;. Nibbly</p>
 </footer>
 </body>
 </html>

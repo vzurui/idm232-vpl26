@@ -149,7 +149,8 @@ if (!empty($searchTerm)) {
 
 <!-- footer -->
 <footer>
-    <p><a href="all-recipes.php">Back to All Recipes</a></p>
+  <p class="help-button"><a href="help.php">Need Help?</a></p>
+  <p>2024 &copy;. Nibbly</p>
 </footer>
 </body>
 </html>
