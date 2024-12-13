@@ -2,7 +2,7 @@
 require_once 'db_connection.php'; 
 require_once 'search_bar.php'; 
 
-$searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
+$searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; // get search term
 ?>
 
 <!DOCTYPE html>
@@ -19,16 +19,17 @@ $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
 <!-- header -->
 <?php include 'header.php'; ?>
 
+<div class="content">
 <?php
 // if a search term is provided, show search results
 if (!empty($searchTerm)) {
-    echo '<h2>Search Results for "' . $searchTerm . '"</h2>';
+    echo '<h2>Search Results for "' . htmlspecialchars($searchTerm) . '"</h2>';
     echo '<div class="recipe-grid">';
-    handleSearch($searchTerm, $conn); // Use the search function to display results
+    handleSearch($searchTerm, $conn); // call the search function to display results
     echo '</div>';
 } else {
     // if no search term, display all recipes
-?>  
+    ?>  
     <h2>All Recipes</h2>
     <div class="all-recipe-grid">
     <?php
@@ -36,9 +37,10 @@ if (!empty($searchTerm)) {
     $sql = "SELECT id, recipe_name, recipe_subtitle, cook_time, servings FROM recipes_list";
     $result = $conn->query($sql);
 
-    if ($result) { // ensure query executed successfully
+    if ($result) { // check if the query ran successfully
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
+                // prepare variables for output
                 $id = $row['id'];
                 $name = htmlspecialchars($row['recipe_name'] ?? 'No Name Available');
                 $subtitle = htmlspecialchars($row['recipe_subtitle'] ?? 'No Subtitle Available');
@@ -47,9 +49,8 @@ if (!empty($searchTerm)) {
 
                 // dynamically generate the image path
                 $image_path = "images/recipes/{$id}.jpg";
-            
 
-                // dynamically generate each recipe card
+                // output the recipe card
                 echo "<a class='recipe-card' href='new-recipe.php?id=$id'>";
                 echo "<img src='$image_path' alt='Image of $name'>";
                 echo "<div class='recipe-info'>";
@@ -63,19 +64,22 @@ if (!empty($searchTerm)) {
                 echo "</a>";
             }
         } else {
+            // display if no recipes are found
             echo "<p>No recipes found!</p>";
         }
     } else {
-        echo "<p>Error fetching recipes. Please try again later.</p>"; // error handling
+        // handle errors during query execution
+        echo "<p>Error fetching recipes. Please try again later.</p>";
     }
     ?>
     </div>
 <?php
 }
-$conn->close(); // close the database connection
+$conn->close(); // close connection
 ?>
+</div>
 
-<!--footer-->
+<!-- footer -->
 <footer>
     <p>2024 &copy;. Nibbly</p>
 </footer>

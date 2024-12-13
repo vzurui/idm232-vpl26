@@ -44,7 +44,8 @@ if (!empty($searchTerm)) {
 	</div>
 	<?php
 }
-$conn->close();
+
+$conn->close(); // close connection
 ?>
 
 <!-- footer -->

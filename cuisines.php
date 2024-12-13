@@ -26,7 +26,6 @@ if (!empty($searchTerm)) {
 } else {
 ?>
 
-
 <main>
     <h2>Cuisines</h2>
     <p class="cuisine-caption">Find the flavor your dinner's been <i>missing.</i></p>

@@ -1,11 +1,12 @@
 <?php
 require_once 'db_connection.php'; 
-require_once'search_bar.php'; 
+require_once 'search_bar.php'; 
 
-$searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; // get search term
+$searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; 
 
-$recipe_name = 'Single Recipe'; // ensures recipe name shows in title
+$recipe_name = 'Single Recipe'; // ensures the title page shows as receipe name
 
+// check if no search term is provided and a valid recipe ID exists
 if (empty($searchTerm) && isset($_GET['id']) && is_numeric($_GET['id']) && (int)$_GET['id'] > 0) {
     $recipe_id = (int)$_GET['id'];
     $sql = "SELECT recipe_name FROM recipes_list WHERE id = ?";
@@ -18,7 +19,7 @@ if (empty($searchTerm) && isset($_GET['id']) && is_numeric($_GET['id']) && (int)
 
         if ($result->num_rows > 0) {
             $recipe = $result->fetch_assoc();
-            $recipe_name = $recipe['recipe_name'] ?? 'Single Recipe';
+            $recipe_name = $recipe['recipe_name']; // update recipe name for the title
         }
 
         $stmt->close();
@@ -31,7 +32,7 @@ if (empty($searchTerm) && isset($_GET['id']) && is_numeric($_GET['id']) && (int)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($recipe['recipe_name'] ?? 'Single Recipe'); ?></title>
+    <title><?php echo htmlspecialchars($recipe_name); ?></title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -42,22 +43,25 @@ if (empty($searchTerm) && isset($_GET['id']) && is_numeric($_GET['id']) && (int)
 
 <div class="recipe-div">
 <?php
+// if a search term is provided, display search results
 if (!empty($searchTerm)) {
     echo '<h2>Search Results for "' . htmlspecialchars($searchTerm) . '"</h2>';
-    echo '<div class="recipe-grid">'; // open grid container
-    handleSearch($searchTerm, $conn); // call your search function to display results
-    echo '</div>'; // close grid container
+    echo '<div class="recipe-grid">'; 
+    handleSearch($searchTerm, $conn); 
+    echo '</div>';
 } else {
-    // fetch and display a single recipe if no search is performed
+    // if no search term, display the single recipe
     if (!isset($_GET['id']) || !is_numeric($_GET['id']) || (int)$_GET['id'] <= 0) {
+        $conn->close(); // close connection 
         die("<p>Invalid recipe ID. Please provide a valid recipe ID.</p>");
     }
-    
+
     $recipe_id = (int)$_GET['id'];
     $sql = "SELECT * FROM recipes_list WHERE id = ?";
     $stmt = $conn->prepare($sql);
 
     if (!$stmt) {
+        $conn->close(); // close connection 
         die("<p>Database query failed: " . htmlspecialchars($conn->error) . "</p>");
     }
 
@@ -68,16 +72,19 @@ if (!empty($searchTerm)) {
     if ($result->num_rows > 0) {
         $recipe = $result->fetch_assoc();
     } else {
+        $stmt->close();
+        $conn->close();
         die("Recipe not found. Please go back and try again.");
     }
 
     $stmt->close();
-
-    // display the single recipe
+    $conn->close(); // close connection 
     ?>
-    <h2 class="recipe-header"><?php echo htmlspecialchars($recipe['recipe_name'] ?? 'Single Recipe'); ?></h2> 
+
+    <h2 class="recipe-header"><?php echo htmlspecialchars($recipe['recipe_name']); ?></h2> 
     <hr class="solid">
-         <!-- add servings and cook_time -->
+
+    <!-- recipe details: cuisine, cook time, servings -->
     <div class="recipe-details">
         <div class="details-row">
             <p><strong>Cuisine:</strong> <?php echo htmlspecialchars($recipe['cuisine'] ?? 'N/A'); ?></p>
@@ -86,22 +93,22 @@ if (!empty($searchTerm)) {
         </div>
     </div>
 
-    
+    <!-- recipe image -->
     <div class="ingredients-div">
         <div class="ingredients-image">
             <?php
             $image_path = "images/recipes/{$recipe['id']}.jpg";
             ?>
-            <img class="showcase-image" src="<?php echo $image_path; ?>" alt="<?php echo htmlspecialchars($recipe['recipe_name'] ?? 'Recipe Image'); ?>">
+            <img class="showcase-image" src="<?php echo $image_path; ?>" alt="<?php echo htmlspecialchars($recipe['recipe_name']); ?>">
         </div>
 
-   
-
+        <!-- description -->
         <div class="blurb-div">
             <h3>Description</h3>
             <p><?php echo htmlspecialchars($recipe['description'] ?? 'No description provided.'); ?></p>
         </div>
 
+        <!-- ingredients -->
         <div class="ingredients-list">
             <h3>Ingredients</h3>
             <ul>
@@ -119,6 +126,7 @@ if (!empty($searchTerm)) {
         </div>
     </div>
 
+    <!-- steps -->
     <div class="blurb-div">
         <h3>Steps</h3>
         <ol>
@@ -136,11 +144,9 @@ if (!empty($searchTerm)) {
     </div>
     <?php
 }
-
-$conn->close();
 ?>
-
 </div>
+
 <!-- footer -->
 <footer>
     <p><a href="all-recipes.php">Back to All Recipes</a></p>
