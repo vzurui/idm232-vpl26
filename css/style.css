@@ -1216,14 +1216,14 @@ height: auto;
     border: 3px solid var(--nightlife);
   }
 	.nibbly-container {
-    margin: 2em 1em;
+    margin: 5em 1em;
   }
   .nibbly-colors {
     width: 80%;
     max-width: 250px;
   }
   .home-text {
-    font-size: 1.5rem;
+    font-size: 2.4rem;
   }
 	.header .menu {
 		display: none; /* Hide desktop menu */
@@ -1323,17 +1323,19 @@ height: auto;
   }
 
   .about p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.4;
+    margin-top: -0.5em;
   }
 
     .help-page {
     font-size: 0.9rem; 
-    margin: 6em 1em; 
+    margin: 8em 2em; 
   }
 
   .help-header {
-    font-size: 2rem; 
+    font-size: 2.3rem; 
+    margin: 1em 0;
   }
 }
 
