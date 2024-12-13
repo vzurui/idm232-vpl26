@@ -1,6 +1,7 @@
 <?php
-include 'db_connection.php'; // include connection
-include 'search_bar.php';  // include search bar
+require_once 'db_connection.php'; 
+require_once 'search_bar.php'; 
+
 $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
 ?>
 
@@ -14,81 +15,66 @@ $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- search bar-->
-<div class="fixed-container">
-<div class="search-bar">
-  <header class="header">
-  <a href="index.php" class="logo"><img src="images/nibbly-logo.png"></a>
-    <input class="menu-btn" type="checkbox" id="menu-btn" />
-    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-    <ul class="menu">
-        <li><a href="about.php">About</a></li>
-        <li><a href="cuisines.php">Cuisines</a></li>
-        <li><a href="all-recipes.php">All Recipes</a></li>
-    </ul>
-  </header>
-
-  <div class="topnav">
-    <div class="search-container">
-      <form action="all-recipes.php" method="GET">
-        <input type="text" placeholder="Feelin' Hungry?" name="search" value="<?php echo htmlspecialchars($searchTerm); ?>">
-      </form>
-    </div>
-  </div>
-</div>
-</div>
-<!--search bar end-->
+  
+<!-- header -->
+<?php include 'header.php'; ?>
 
 <?php
-// If a search term is provided, show search results
+// if a search term is provided, show search results
 if (!empty($searchTerm)) {
     echo '<h2>Search Results for "' . $searchTerm . '"</h2>';
     echo '<div class="recipe-grid">';
     handleSearch($searchTerm, $conn); // Use the search function to display results
     echo '</div>';
 } else {
-    // If no search term, display all recipes
+    // if no search term, display all recipes
 ?>  
     <h2>All Recipes</h2>
     <div class="all-recipe-grid">
     <?php
-    // Fetch all recipes from the database
+    // fetch all recipes from the database
     $sql = "SELECT id, recipe_name, recipe_subtitle, cook_time, servings FROM recipes_list";
     $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $id = $row['id']; // Fetch the unique recipe ID
-            $name = htmlspecialchars($row['recipe_name'] ?? 'No Name Available'); // Fetch the recipe name
-            $subtitle = htmlspecialchars($row['recipe_subtitle'] ?? 'No Subtitle Available'); // Fetch the recipe subtitle
-            $cook_time = htmlspecialchars($row['cook_time'] ?? 'N/A'); // Fetch the cook time
-            $servings = htmlspecialchars($row['servings'] ?? 'N/A'); // Fetch the servings
+    if ($result) { // ensure query executed successfully
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $id = $row['id'];
+                $name = htmlspecialchars($row['recipe_name'] ?? 'No Name Available');
+                $subtitle = htmlspecialchars($row['recipe_subtitle'] ?? 'No Subtitle Available');
+                $cook_time = htmlspecialchars($row['cook_time'] ?? 'N/A');
+                $servings = htmlspecialchars($row['servings'] ?? 'N/A');
 
-            // Dynamically generate the image path based on the recipe ID
-            $image_path = "images/recipes/{$id}.jpg";
+                // dynamically generate the image path
+                $image_path = "images/recipes/{$id}.jpg";
+            
 
-            // Dynamically generate each recipe card
-            echo "<a class='recipe-card' href='new-recipe.php?id=$id'>";
-            echo "<img src='$image_path' alt='Image of $name'>";
-            echo "<div class='recipe-info'>";
-            echo "<h3>$name</h3>";
-            echo "<p>$subtitle</p>";
-            echo "<div class='recipe-details'>";
-            echo "<p>Cook Time: $cook_time mins</p>";
-            echo "<p>Servings: $servings</p>";
-            echo "</div>";
-            echo "</div>";
-            echo "</a>";
+                // dynamically generate each recipe card
+                echo "<a class='recipe-card' href='new-recipe.php?id=$id'>";
+                echo "<img src='$image_path' alt='Image of $name'>";
+                echo "<div class='recipe-info'>";
+                echo "<h3>$name</h3>";
+                echo "<p>$subtitle</p>";
+                echo "<div class='recipe-details'>";
+                echo "<p>Cook Time: $cook_time mins</p>";
+                echo "<p>Servings: $servings</p>";
+                echo "</div>";
+                echo "</div>";
+                echo "</a>";
+            }
+        } else {
+            echo "<p>No recipes found!</p>";
         }
     } else {
-        echo "<p>No recipes found!</p>";
+        echo "<p>Error fetching recipes. Please try again later.</p>"; // error handling
     }
     ?>
     </div>
 <?php
 }
-$conn->close(); // Close the database connection
+$conn->close(); // close the database connection
 ?>
+
 <!--footer-->
 <footer>
     <p>2024 &copy;. Nibbly</p>

@@ -1,6 +1,6 @@
 <?php
-include 'db_connection.php'; // include connection
-include 'search_bar.php';    // include search bar logic
+require_once 'db_connection.php'; 
+require_once'search_bar.php'; 
 $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
 ?>
 
@@ -14,30 +14,8 @@ $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- search bar -->
-<div class="fixed-container">
-<div class="search-bar">
-  <header class="header">
-  <a href="index.php" class="logo"><img src="images/nibbly-logo.png"></a>
-    <input class="menu-btn" type="checkbox" id="menu-btn" />
-    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-    <ul class="menu">
-        <li><a href="about.php">About</a></li>
-        <li><a href="cuisines.php">Cuisines</a></li>
-        <li><a href="all-recipes.php">All Recipes</a></li>
-    </ul>
-  </header>
-
-  <div class="topnav">
-    <div class="search-container">
-      <form action="cuisines.php" method="GET">
-        <input type="text" placeholder="Feelin' Hungry?" name="search" value="<?php echo htmlspecialchars($searchTerm); ?>">
-      </form>
-    </div>
-  </div>
-</div>
-</div>
-<!-- search bar end -->
+<!-- header -->
+<?php include 'header.php'; ?>
 
 <?php
 if (!empty($searchTerm)) {

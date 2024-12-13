@@ -1,6 +1,7 @@
 <?php
-include 'db_connection.php'; //include connection
-include 'search_bar.php'; //include search bar
+require_once 'db_connection.php'; 
+require_once'search_bar.php'; 
+
 $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
 ?>
 
@@ -14,45 +15,25 @@ $searchTerm = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
         <link rel="stylesheet" href="css/style.css">
       </head>
 <body>
-<!--search bar-->
-<div class="fixed-container">
-<div class="search-bar">
-  <header class="header">
-  <a href="index.php" class="logo"><img src="images/nibbly-logo.png"></a>
-    <input class="menu-btn" type="checkbox" id="menu-btn" />
-    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-    <ul class="menu">
-        
-  <li><a href="about.php">About</a></li>
-  <li><a href="cuisines.php">Cuisines</a></li>
-  <li><a href="all-recipes.php">All Recipes</a></li>
-</ul>
-  </header>
 
-  <div class="topnav">
-    <div class="search-container">
-      <form action="index.php" method="GET">
-        <input type="text" placeholder="Feelin' Hungry?" name="search" value="<?php echo htmlspecialchars($searchTerm); ?>">
-      </form>
-    </div>
-  </div>
-</div>
-</div>
-<!--end of search bar-->
+<!-- header -->
+<?php include 'header.php'; ?>
+
+
 <?php
-// If a search term is provided, show search results
+// if a search term is provided, show search results
 if (!empty($searchTerm)) {
     echo '<h2>Search Results for "' . $searchTerm . '"</h2>';
     echo '<div class="recipe-grid">';
-    handleSearch($searchTerm, $conn); // Use the search function to display results
+    handleSearch($searchTerm, $conn); // use the search function to display results
     echo '</div>';
 } else {
-    // If no search term, display the "About Us" content
+    // if no search term, display the "About Us" content
 ?>	
 
 <div class="nibbly-container">
 <p class="home-text">What's Cooking,</p>
-<img class="nibbly-colors"src="images/home-page-logo.png">
+<img class="nibbly-colors"src="images/home-page-logo.png" alt="Home Page Logo">
 <p class="home-text">Good Looking?</p>
 </div>
 <p id="home-bold"class="home-text"><b>Let's get started.</b></p>
@@ -60,6 +41,7 @@ if (!empty($searchTerm)) {
 <?php
 }
 ?>
+
 <!-- footer -->
 <footer>
   <p>2024 &copy;. Nibbly</p>
