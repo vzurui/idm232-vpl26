@@ -904,7 +904,6 @@ height: auto;
     line-height: 1.8;
     margin: 0 20px;
   }
-
   .help-page {
     font-size: 1.2rem; 
     margin: 7em 3em; 
@@ -1137,6 +1136,10 @@ height: auto;
     margin: 1.5em auto;
     max-width: 95%;
   }
+  .recipe-header {
+    font-size: 2.8rem; /* Reduce font size for tablets */
+    margin: 2em 0 0 0.3em; /* Adjust margins for smaller screens */
+  }
 
   .ingredients-image {
     max-width: 100%;
@@ -1145,7 +1148,6 @@ height: auto;
   .ingredients-image img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
   }
 
   .blurb-div h3,
@@ -1157,6 +1159,21 @@ height: auto;
   .ingredients-list li {
     font-size: 1rem;
   }
+  .recipe-details {
+    font-size: 1rem; 
+    margin-bottom: 1.5em; 
+  }
+
+  .details-row {
+    gap: 50px; 
+  }
+
+  .details-row p {
+    font-size: 1.2rem; 
+    white-space: normal; 
+    text-align: center; 
+  }
+  
 	.about {
     padding: 0 2em;
 		display: flex;
@@ -1244,12 +1261,12 @@ height: auto;
   }
 
   .recipe-grid {
-    grid-template-columns: 1fr; /* Still one column for recipes */
+    grid-template-columns: 1fr; 
     gap: 15px;
   }
 	.all-recipe-grid {
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 10px; /* Tighten gap */
+    grid-template-columns: 1fr; 
+    gap: 10px; 
     margin: 1em;
   }
 
@@ -1285,6 +1302,10 @@ height: auto;
     max-width: 100%;
     padding: 0 10px;
   }
+  .recipe-header {
+    font-size: 2rem; /* Smaller font for mobile devices */
+    margin: 2.7em 0 0 0.2em; /* Compact margins for tight spaces */
+  }
 
   .ingredients-image {
     max-width: 100%;
@@ -1293,7 +1314,6 @@ height: auto;
   .ingredients-image img {
     width: 100%;
     height: auto;
-    border-radius: 5px;
   }
 
   .blurb-div h3,
@@ -1306,6 +1326,22 @@ height: auto;
   .ingredients-list li {
     font-size: 0.9rem;
     text-align: justify;
+  }
+
+  .recipe-details {
+    font-size: 0.9rem; /* Smallest font size */
+    margin-bottom: 1em; /* Minimal margin */
+  }
+
+  .details-row {
+    gap: 20px; /* Minimal gap for compact layout */
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .details-row p {
+    font-size: 1rem; /* Adjust font size for small screens */
+    text-align: center; /* Center text for smaller layout */
+    line-height: 1.6; /* Increase line spacing */
   }
 
   footer p {
